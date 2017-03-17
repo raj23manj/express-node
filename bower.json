@@ -1,0 +1,22 @@
+{
+  "name": "lib-mngt",
+  "description": "library management",
+  "main": "app.js",
+  "authors": [
+    "rajesh23-drg <rmanjunath@dresourcesgroup.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/raj23manj/express-node",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.0"
+  }
+}
