@@ -17,3 +17,8 @@
 
   - To Create db locally
     createdb library_mngt_dev
+
+> Console: (similar to rails c)
+  node console
+    -> to execute queries
+      -models.Todo.findAll().then(function(data){ console.log(data)})
