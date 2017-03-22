@@ -1,11 +1,19 @@
 # express-node
 
-- To Start In Local 
+> Server & Setup:
 
-  $ DEBUG=myapp:* npm start
+  - To Start In Local 
 
-- Using nodemon to start
-  npm run start:dev
+    $ DEBUG=myapp:* npm start
 
-- To use Sequilize
-  node_modules/.bin/sequelize <cmd>
+  - Using nodemon to start
+    npm run start:dev
+
+  - To use Sequilize
+    node_modules/.bin/sequelize <cmd>
+
+
+> Database:
+
+  - To Create db locally
+    createdb library_mngt_dev
