@@ -6,7 +6,7 @@
 
     $ DEBUG=myapp:* npm start
 
-  - Using nodemon to start
+  - Using nodemon to start <this command detects changes and restarts automatically>
     npm run start:dev
 
   - To use Sequilize

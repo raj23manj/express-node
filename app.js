@@ -5,8 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var index = require('./controllers/index');
+var users = require('./controllers/users');
 
 var app = express();
 
@@ -22,8 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
-//app.use(require('./middlewares'))
-//app.use(require('./controllers'))
+
 
 app.use('/', index);
 app.use('/users', users);
