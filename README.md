@@ -1,16 +1,17 @@
 # express-node
 
 > Server & Setup:
-
+  - Setup
+    - npm install
+    - bower install
   - To Start In Local 
     - $ DEBUG=myapp:* npm start
 
   - Using nodemon to start <this command detects changes and restarts automatically>
     - $ npm run start:dev
 
-  - To use Sequilize
-    - $ node_modules/.bin/sequelize command
-
+  - To use Sequilize to migrate the DB
+    - $ node_modules/.bin/sequelize db:migrate
 
 > Database:
 
