@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
+<head>
+    <title>New book</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,20 +9,12 @@
     <link rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap.min.css' />
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  </head>
-  <body>
-    <header>
-      <% include ../partials/header %>
-    </header>
-      <div class="container">
-        <h1><%= title %></h1>
-        <p class="btn btn-lg btn-default">Welcome to <%= title %></p>
-        <div><%= data %></div>
-      </div>
-      <footer>
-        <% include ../partials/footer %>
-      </footer>
-    </body>
+</head>
+<body>
+    <form action="/books/create" method="post">
+        Book Name: <input type="text" name="name" value="" /><br><br>
+        Author Id: <input type="text" name="AuthorId" value="" /><br><br>
+        <input type="submit" value="accept"/><br><br><hr>
+    </form>
+</body>
 </html>
-
-

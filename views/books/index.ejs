@@ -11,8 +11,17 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 </head>
 <body>
-<h1><%= title %></h1>
-<p class="btn btn-lg btn-default">Welcome to <%= title %></p>
-<div><%= data %></div>
+    <h1><%= title %></h1>
+    <p class="btn btn-lg btn-default">Welcome to <%= title %></p>
+    <a href="/books/new">Create new Book</a>
+    <div>
+        <% data.forEach(function(book) { %>
+            <li>
+                Book Name: <%= book.name %> - Author: <%= book.Author.name%>
+                - <a href="/books/<%=book.id%>/edit">Edit</a>
+                - <a href="/books/<%=book.id%>/destroy">Delete</a>
+            </li>
+        <% }); %>
+    </div>
 </body>
 </html>
