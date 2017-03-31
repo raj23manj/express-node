@@ -12,10 +12,14 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      author_id: {
+      AuthorId: {
         type: Sequelize.INTEGER,
         onDelete: "CASCADE",
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: 'Authors',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

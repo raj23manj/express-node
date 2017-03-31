@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var model_books = require('../server/models/book');
+var models = require('../server/models/index');
 
 
 /* GET home page. */
-router.get('/books', function(req, res, next) {
-    model_books.Book.findAll().then(function(data){
-        res.render('index', { title: 'Books', data: data });
+router.get('/', function(req, res, next) {
+    models.Book.findAll().then(function(data){
+        res.render('books/index', { title: 'Books Index', data: data });
         console.log(data);
     });
     // res.render('index', { title: 'Express', data: data });
