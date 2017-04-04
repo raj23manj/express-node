@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const models = require('../server/models/index');
-const fileUpload = require('express-fileupload');
+var multer = require('multer');
+//const app = express();
 
-const app = express();
-// default options
-app.use(fileUpload());
+var upload = multer({ dest: './public/uploads' });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -24,7 +23,9 @@ router.get('/new', function(req, res, next) {
     res.render('books/new', {});
 });
 
-router.post('/create', function(req, res) {
+router.post('/create', upload.single('avatar'), function(req, res) {
+    console.log(req.body.AuthorId);
+    console.log(req.files.filefield);
     models.Book.create({
         name: req.body.name,
         AuthorId: req.body.AuthorId
