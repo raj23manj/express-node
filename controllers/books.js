@@ -14,7 +14,6 @@ router.get('/', function(req, res, next) {
         ]
     }).then(function(data){
         res.render('books/index', { title: 'Books Index', data: data });
-        console.log(data);
     });
 });
 

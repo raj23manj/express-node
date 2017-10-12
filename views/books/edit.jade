@@ -1,2 +1,5 @@
-form(action="/books/#{data.id}" method="post")
-  include partials/book_details
+extends ../layout
+
+block content
+  form(action="/books/#{data.id}" method="post")
+    include partials/book_details

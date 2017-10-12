@@ -1,8 +1,10 @@
-h1 #{title}
-p.btn.btn-lg.btn-default Welcome to #{title}
-a(href='/books/new') Create new Book
-div
-  each book, i in data
-    li 'Book Name: #{book.name} - Author #{book.Author.name}'
-      a(href='"/books/#{book.id}/edit"') Edit
-      a(href='"/books/#{book.id}/destroy"') Delete
+extends ../layout
+
+block content
+  h1 Welcome to #{title}
+  a(href='/books/new') Create new Book
+  div
+    each book in data
+      li Book Name: #{book.name} - Author #{book.Author.name}
+        a(href='/books/#{book.id}/edit') Edit
+        a(href='/books/#{book.id}/destroy') Delete

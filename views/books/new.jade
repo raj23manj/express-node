@@ -1,3 +1,6 @@
-form(action="/books/create" method="post")
-  include partials/book_details
+extends ../layout
+
+block content
+  form(action="/books/create" method="post")
+    include partials/book_details
 
