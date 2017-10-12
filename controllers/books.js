@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const models = require('../server/models/index');
-const fileUpload = require('express-fileupload');
 
 const app = express();
 // default options
-app.use(fileUpload());
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
