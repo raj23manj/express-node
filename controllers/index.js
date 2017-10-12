@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express', data: data });
     console.log(data);
   });
-  // res.render('index', { title: 'Express', data: data });
 });
 
 module.exports = router;

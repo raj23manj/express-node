@@ -4,6 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var multer= require('multer');
+var upload = multer({dest: './uploads'});
+var flash = require('connect-flash');
+var session = require('express-session');
+var expressValidator = require('express-validator');
+var moment = require('moment');
 
 var index = require('./controllers/index');
 var users = require('./controllers/users');
@@ -11,9 +17,10 @@ var books = require('./controllers/books');
 
 var app = express();
 
+app.locals.moment = moment;
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/views'));
+app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
