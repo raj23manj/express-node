@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const models = require('../server/models/index');
 
-const app = express();
 // default options
 
 /* GET home page. */
