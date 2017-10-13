@@ -29,8 +29,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
+
+app.use('/components',  express.static(__dirname + '/node_modules'));
 
 app.use('/', index);
 app.use('/users', users);
