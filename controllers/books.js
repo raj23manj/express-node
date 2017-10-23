@@ -4,6 +4,11 @@ const models = require('../server/models/index');
 
 // default options
 
+// MUlter Upload
+//multer object creation
+const multer  = require('multer')
+const upload = multer({dest: './uploads'});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     models.Book.findAll({
@@ -20,10 +25,11 @@ router.get('/new', function(req, res, next) {
     res.render('books/new', {});
 });
 
-router.post('/create', function(req, res) {
+router.post('/create', upload.single('uploadBookName'), function(req, res) {
     models.Book.create({
         name: req.body.name,
-        AuthorId: req.body.AuthorId
+        AuthorId: req.body.AuthorId,
+        uploadBookName: req.file.filename
     }).then(function() {
         res.redirect('/books');
     });

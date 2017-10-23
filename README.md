@@ -12,6 +12,9 @@
 
   - To use Sequilize to migrate the DB
     - $ node_modules/.bin/sequelize db:migrate
+    
+  - To generate new migration File
+    - node_modules/.bin/sequelize migration:generate --name yourMigrationName  
 
 > Database:
 
@@ -22,3 +25,11 @@
   - $ node console
   - to execute queries
     - models.Todo.findAll().then(function(data){ console.log(data)})
+    
+> References: (sequelize)
+    - https://www.npmjs.com/package/sequelize-cli
+     
+> Run in the Debug mode:
+  - node --inspect ./bin/www 
+  - Open chrome and hit the below link
+    - chrome://inspect/  

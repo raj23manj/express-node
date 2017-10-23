@@ -31,4 +31,4 @@ npm-debug.log
 
 bower_components
 .idea
-public/uploads/*
+uploads/*

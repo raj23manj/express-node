@@ -1,6 +1,6 @@
 extends ../layout
 
 block content
-  form(action="/books/create" method="post")
+  form(action="/books/create" method="post" enctype='multipart/form-data')
     include partials/book_details
 
