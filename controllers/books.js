@@ -19,7 +19,10 @@ router.get('/', function(req, res, next) {
 router.get('/new', function(req, res, next) {
     models.Category.findAll({ order: [['name', 'ASC']] }).then(function(categories){
       models.Author.findAll({ order: [['name', 'ASC']] }).then(function(authors){
-        res.render('books/new', {categories: categories, authors: authors, object: {}});
+        res.render('books/new', {categories: categories,
+                                 authors: authors,
+                                 buttonName: 'Create',
+                                 object: {}});
       });
     });
 });
@@ -43,7 +46,10 @@ router.get('/:id/edit', function(req, res) {
     }).then(function(data){
       models.Category.findAll({ order: [['name', 'ASC']] }).then(function(categories){
         models.Author.findAll({ order: [['name', 'ASC']] }).then(function(authors){
-          res.render('books/edit', {categories: categories, authors: authors, object: data });
+          res.render('books/edit', {categories: categories,
+                                    buttonName: 'Submit',
+                                    authors: authors,
+                                    object: data });
         });
       });
     });

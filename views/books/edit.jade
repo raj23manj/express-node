@@ -1,5 +1,7 @@
 extends ../layout
 
+- var buttonName = buttonName;
+
 block content
   form(action="/books/#{object.id}" method="post")
     include partials/book_details
