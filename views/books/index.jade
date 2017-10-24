@@ -5,6 +5,7 @@ block content
   a(href='/books/new') Create new Book
   div
     each book in data
-      li Book Name: #{book.name} - Author #{book.Author.name}
-        a(href='/books/#{book.id}/edit') Edit
+      li
+        | Book Name:#{book.name} - Author: #{book.Author.name} - Category: #{book.Category.name} -
+        a(href='/books/#{book.id}/edit') Edit -
         a(href='/books/#{book.id}/destroy') Delete

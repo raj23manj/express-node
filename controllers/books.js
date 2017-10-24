@@ -7,7 +7,7 @@ const upload = multer({dest: './uploads'});
 /* GET home page. */
 router.get('/', function(req, res, next) {
     models.Book.findAll({
-        include: [models.Author],
+        include: [models.Author, models.Category],
         order: [
             ['id', 'DESC']
         ]
@@ -41,7 +41,11 @@ router.get('/:id/edit', function(req, res) {
             id: req.params.id
         }
     }).then(function(data){
-        res.render('books/edit', { title: 'Edit Book', data: data });
+      models.Category.findAll({ order: [['name', 'ASC']] }).then(function(categories){
+        models.Author.findAll({ order: [['name', 'ASC']] }).then(function(authors){
+          res.render('books/edit', {categories: categories, authors: authors, object: data });
+        });
+      });
     });
 });
 

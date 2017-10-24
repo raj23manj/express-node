@@ -1,5 +1,5 @@
 extends ../layout
 
 block content
-  form(action="/books/#{data.id}" method="post")
+  form(action="/books/#{object.id}" method="post")
     include partials/book_details
