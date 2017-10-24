@@ -1,18 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const models = require('../server/models/index');
-
-// default options
-
-// MUlter Upload
-//multer object creation
+const models = require('../server/models/');
 const multer  = require('multer')
 const upload = multer({dest: './uploads'});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     models.Book.findAll({
-        include: [models.Author],
+        include: [models.Author, models.Category],
         order: [
             ['id', 'DESC']
         ]
@@ -22,13 +17,18 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/new', function(req, res, next) {
-    res.render('books/new', {});
+    models.Category.findAll({ order: [['name', 'ASC']] }).then(function(categories){
+      models.Author.findAll({ order: [['name', 'ASC']] }).then(function(authors){
+        res.render('books/new', {categories: categories, authors: authors, object: {}});
+      });
+    });
 });
 
 router.post('/create', upload.single('uploadBookName'), function(req, res) {
     models.Book.create({
         name: req.body.name,
         AuthorId: req.body.AuthorId,
+        CategoryId: req.body.CategoryId,
         uploadBookName: req.file.filename
     }).then(function() {
         res.redirect('/books');
@@ -41,7 +41,11 @@ router.get('/:id/edit', function(req, res) {
             id: req.params.id
         }
     }).then(function(data){
-        res.render('books/edit', { title: 'Edit Book', data: data });
+      models.Category.findAll({ order: [['name', 'ASC']] }).then(function(categories){
+        models.Author.findAll({ order: [['name', 'ASC']] }).then(function(authors){
+          res.render('books/edit', {categories: categories, authors: authors, object: data });
+        });
+      });
     });
 });
 

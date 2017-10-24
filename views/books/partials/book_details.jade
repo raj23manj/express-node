@@ -1,8 +1,18 @@
-label Book Name:
-  input(type="text" name="name" value="")
-label Author Id:
-  input(type="text" name="AuthorId" value="")
-label File
-  input(type='file', name='uploadBookName')
+div.col-md-6
+  label.col-md-12 Book Name:
+    input(type="text" name="name" value="#{object.name}")
 
-input(type="submit" value="Create")
+  label.col-md-12 Category:
+    select(name="CategoryId")
+      each obj in categories
+        option(value= obj.id, selected=object.CategoryId === obj.id ? true : false)= obj.name
+
+  label.col-md-12 Author:
+    select(name="AuthorId")
+      each obj in authors
+        option(value= obj.id, selected=object.AuthorId === obj.id ? true : false)= obj.name
+
+  label.col-md-12 File
+    input(type='file', name='uploadBookName')
+
+  input.col-md-3(type="submit" value="Create")

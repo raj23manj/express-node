@@ -3,7 +3,6 @@
 > Server & Setup:
   - Setup
     - npm install
-    - bower install
   - To Start In Local 
     - $ DEBUG=myapp:* npm start
 
