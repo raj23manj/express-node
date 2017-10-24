@@ -1,0 +1,5 @@
+extends ../layout
+
+block content
+    form(action="/categories/#{object.id}" method="post")
+        include partials/form

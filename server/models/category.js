@@ -5,7 +5,12 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Category.hasMany(models.Book)
+        Category.hasMany(models.Book, {
+          onDelete: "CASCADE",
+          foreignKey: {
+            foreignKey: 'CategoryId'
+          }
+        })
       }
     }
   });
