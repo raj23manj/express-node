@@ -1,5 +1,6 @@
 div.col-md-6
     label.col-md-12 Category Name:
-        input(type="text" name="name" value="#{object.name}")
+      - var value = empty({}) ? "" : object.name
+      input(type="text" name="name" value="#{value}")
 
     input.col-md-3(type="submit" value="Create")

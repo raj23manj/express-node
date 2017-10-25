@@ -8,11 +8,13 @@ var multer= require('multer');
 var upload = multer({dest: './uploads'});
 var flash = require('connect-flash');
 var session = require('express-session');
-var expressValidator = require('express-validator');
 var moment = require('moment');
+var empty = require('is-empty');
 var app = express();
 
+//Set globally
 app.locals.moment = moment;
+app.locals.empty = empty;
 
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));

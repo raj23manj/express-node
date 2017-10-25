@@ -1,5 +1,10 @@
 extends ../layout
 
 block content
-    form(action="/categories/create" method="post")
-        include partials/form
+  if errors
+    - console.log(errors)
+    each k, i in errors
+      .alert.alert-danger #{k}
+
+  form(action="/categories/create" method="post")
+      include partials/form
