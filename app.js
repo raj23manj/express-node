@@ -10,11 +10,13 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var moment = require('moment');
 var empty = require('is-empty');
+var _ = require('lodash');
 var app = express();
 
 //Set globally
 app.locals.moment = moment;
 app.locals.empty = empty;
+app.locals._ = _;
 
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));
