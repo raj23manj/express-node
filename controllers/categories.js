@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const models = require('../server/models/');
+const { check, validationResult, body } = require('express-validator/check');
+const { matchedData, sanitize } = require('express-validator/filter');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -17,12 +20,23 @@ router.get('/new', function(req, res, next) {
     res.render('categories/new', {object: {}});
 });
 
-router.post('/create', function(req, res) {
-    models.Category.create({
-        name: req.body.name
-    }).then(function() {
-        res.redirect('/categories');
-    });
+router.post('/create',
+             [check('name').custom(value => {
+               if (value === "" || value === null || value === undefined)
+                 throw new Error(" Can't Be Blank !");
+             })], function(req, res) {
+    //check errors
+    const errors = validationResult(req);
+
+    if(!errors.isEmpty()){
+      res.render('categories/new', {errors: errors.mapped(), object: {}});
+    }else{
+      models.Category.create({
+          name: req.body.name
+      }).then(function() {
+          res.redirect('/categories');
+      });
+    }
 });
 
 router.get('/:id/edit', function(req, res) {
