@@ -6,17 +6,25 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var multer= require('multer');
 var upload = multer({dest: './uploads'});
-var flash = require('connect-flash');
+var expressFlash = require('express-flash');
 var session = require('express-session');
 var moment = require('moment');
 var empty = require('is-empty');
 var _ = require('lodash');
 var app = express();
+var pg = require('pg')
+  , pgSession = require('connect-pg-simple')(session);
+var env       = process.env.NODE_ENV || 'development';
+var config    = require(path.resolve(__dirname) + '/config.json')[env];
+var winston = require('winston'),
+  expressWinston = require('express-winston');
 
 //Set globally
 app.locals.moment = moment;
 app.locals.empty = empty;
 app.locals._ = _;
+
+global.appRoot = path.resolve(__dirname);
 
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));
@@ -30,6 +38,44 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/components',  express.static(__dirname + '/node_modules'));
+
+// session related
+app.use(session({
+  store: new pgSession({
+    conString: "postgres://" + config.username + ':' + config.password + '@' + config.host + '/' + config.database,
+    tableName : 'session'
+  }),
+  secret: "secret", ///process.env.FOO_COOKIE_SECRET,
+  resave: false,
+  saveUninitialized : false,
+  cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 days
+}));
+app.use(expressFlash());
+
+expressWinston.requestWhitelist.push('body');
+
+app.use(expressWinston.logger({
+  transports: [
+    new winston.transports.Console({
+      json: true,
+      colorize: true
+    })
+  ],
+  meta: true, // optional: control whether you want to log the meta data about the request (default to true)
+  msg: "HTTP {{req.method}} {{req.url}} {{req.body}}", // optional: customize the default logging message. E.g. "{{res.statusCode}} {{req.method}} {{res.responseTime}}ms {{req.url}}"
+  expressFormat: true, // Use the default Express/morgan request formatting. Enabling this will override any msg if true. Will only output colors with colorize set to true
+  colorize: true, // Color the text and status code, using the Express/morgan color palette (text: gray, status: default green, 3XX cyan, 4XX yellow, 5XX red).
+  ignoreRoute: function (req, res) { return false; } // optional: allows to skip some log messages based on request and/or response
+}));
+
+app.use(expressWinston.errorLogger({
+  transports: [
+    new winston.transports.Console({
+      json: true,
+      colorize: true
+    })
+  ]
+}));
 
 module.exports = app;
 

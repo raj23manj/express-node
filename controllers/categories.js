@@ -21,23 +21,23 @@ router.get('/new', function (req, res, next) {
 });
 
 router.post('/create',
-  [body('name').custom(value => {
-    if (value === "" || value === null || value === undefined)
-      throw new Error(" Can't Be Blank !");
-  })], function (req, res) {
+             [body('name').isLength({ min: 1 }).withMessage('must not be empty !')],
+             function(req, res) {
     //check errors
     const errors = validationResult(req);
 
-    if (!errors.isEmpty()) {
+    if(!errors.isEmpty()){
+      req.flash('info', 'Correct The Errors !');
       res.render('categories/new', {errors: errors.mapped(), object: {}});
-    } else {
+    }else{
       models.Category.create({
-        name: req.body.name
-      }).then(function () {
+          name: req.body.name
+      }).then(function() {
+        req.flash('info', 'Created Successfully !');
         res.redirect('/categories');
       });
     }
-  });
+});
 
 router.get('/:id/edit', function (req, res) {
   models.Category.findOne({

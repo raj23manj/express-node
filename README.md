@@ -32,3 +32,7 @@
   - node --inspect ./bin/www 
   - Open chrome and hit the below link
     - chrome://inspect/  
+    
+> Sessions:
+  - npm install
+  - run 'psql library_mngt_dev < node_modules/connect-pg-simple/table.sql'
