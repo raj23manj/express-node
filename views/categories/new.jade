@@ -1,11 +1,6 @@
 extends ../layout
 
 block content
-  if errors
-    - _.forEach(errors, function(value, key) {
-        .alert.alert-danger #{key} - #{value.msg}
-    -  });
-
-
+  include ../partials/errors
   form(action="/categories/create" method="post")
       include partials/form

@@ -6,12 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var multer= require('multer');
 var upload = multer({dest: './uploads'});
-var flash = require('connect-flash');
+var expressFlash = require('express-flash');
 var session = require('express-session');
 var moment = require('moment');
 var empty = require('is-empty');
 var _ = require('lodash');
 var app = express();
+var pg = require('pg')
+  , pgSession = require('connect-pg-simple')(session);
 
 //Set globally
 app.locals.moment = moment;
@@ -30,6 +32,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/components',  express.static(__dirname + '/node_modules'));
+
+// session related
+app.use(session({
+  store: new pgSession({
+    //'pg://' + config.username + ':' + config.password + '@' + config.host + '/' + config.database
+    conString: "postgres://postgres:postgres@localhost:5432/library_mngt_dev",
+    tableName : 'session'
+  }),
+  secret: "secret",///process.env.FOO_COOKIE_SECRET,
+  resave: false,
+  saveUninitialized : false,
+  cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 days
+}));
+app.use(expressFlash());
 
 module.exports = app;
 
