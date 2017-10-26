@@ -20,6 +20,8 @@ app.locals.moment = moment;
 app.locals.empty = empty;
 app.locals._ = _;
 
+global.appRoot = path.resolve(__dirname);
+
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade');
