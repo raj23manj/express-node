@@ -19,6 +19,8 @@
 
   - To Create db locally
     - $ createdb library_mngt_dev
+  - To run manual migration check the reference
+  	-	https://github.com/sequelize/sequelize/issues/313  
 
 > Console: (similar to rails c)
   - $ node console
@@ -31,8 +33,4 @@
 > Run in the Debug mode:
   - node --inspect ./bin/www 
   - Open chrome and hit the below link
-    - chrome://inspect/  
-    
-> Sessions:
-  - npm install
-  - run 'psql library_mngt_dev < node_modules/connect-pg-simple/table.sql'
+    - chrome://inspect/
