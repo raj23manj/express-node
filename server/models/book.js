@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
         }),
         Book.belongsToMany(models.Tag, {
           through: {
-            model: BooksTag,
+            model: models.BooksTag,
             unique: false
           },
           foreignKey: 'BookId',
