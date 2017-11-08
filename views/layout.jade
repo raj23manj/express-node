@@ -3,23 +3,28 @@ html
   include partials/head
 
   body
-    #wrapper.toggled
-      // Sidebar
-      #sidebar-wrapper
-        ul.sidebar-nav
-          li.sidebar-brand
-            a(href='#')
-              | DRG Library
-          li
-            a(href='/books') Books
-          li
-            a(href='/categories') Categories
-      // /#sidebar-wrapper
-      // Page Content
-      #page-content-wrapper
-        h1 Simple Sidebar
-        include partials/flash
-        block content
-      // /#page-content-wrapper
-
-      include partials/footer
+    //#wrapper.toggled
+    //  // Sidebar
+    //  #sidebar-wrapper
+    //    ul.sidebar-nav
+    //      li.sidebar-brand
+    //        a(href='#')
+    //          | DRG Library
+    //      li
+    //        a(href='/books') Books
+    //      li
+    //        a(href='/categories') Categories
+    //  // /#sidebar-wrapper
+    //  // Page Content
+    //  #page-content-wrapper
+    //    h1 Simple Sidebar
+    //    include partials/flash
+    //    block content
+    //  // /#page-content-wrapper
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
+      include partials/header
+    // Page Content
+    .container
+      block content
+      
+    include partials/footer
