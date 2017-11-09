@@ -20,24 +20,19 @@ router.get('/new', function (req, res, next) {
   res.render('categories/new', {object: {}});
 });
 
-router.post('/create',
-             [body('name').isLength({ min: 1 }).withMessage('must not be empty !')],
-             function(req, res) {
-    //check errors
-    const errors = validationResult(req);
-
-    if(!errors.isEmpty()){
+router.post('/create', function(req, res) {
+  var category = models.Category.build({name: req.body.name});
+  errors = category.validate();
+    if(errors){
       req.flash('info', 'Correct The Errors !');
-      res.render('categories/new', {errors: errors.mapped(), object: {}});
+      res.render('categories/new', {errors: errors, object: {}});
     }else{
-      models.Category.create({
-          name: req.body.name
-      }).then(function() {
+      category.save().then(function() {
         req.flash('info', 'Created Successfully !');
         res.redirect('/categories');
       });
     }
-});
+  });
 
 router.get('/:id/edit', function (req, res) {
   models.Category.findOne({

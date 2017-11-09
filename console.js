@@ -1,6 +1,6 @@
+var app = require("./app"); // TODO: @saghosh: need to mode this to a seperate module for gobal scope
 var repl = require("repl");
-//var db = require("./server/models/index.js");
-var models = require('./server/models/index');
+var models = require('./server/models/index.js');
 var todo = require("./server/models/todo.js");
 
 var replServer = repl.start({});

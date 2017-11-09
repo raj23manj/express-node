@@ -32,3 +32,5 @@ npm-debug.log
 bower_components
 .idea
 uploads/*
+.DS_Store
+public/.DS_Store

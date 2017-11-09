@@ -1,11 +1,24 @@
 extends ../layout
 
 block content
-  h1 Welcome to #{title}
-  a(href='/books/new') Create new Book
-  div
-    each book in data
-      li
-        | Book Name:#{book.name} - Author: #{book.Author.name} - Category: #{book.Category.name} -
-        a(href='/books/#{book.id}/edit') Edit -
-        a(href='/books/#{book.id}/destroy') Delete
+  include ../partials/left_nav
+  .row
+    include ../partials/search_nav
+    .col-lg-9
+      .row.my-4
+        each book in data
+          .col-lg-3.col-md-4.mb-4
+            .card.h-100
+              a(href='#')
+                img.card-img-top(src='app-assets/images/bk-01.jpg', alt='')
+              .card-body
+                h5.card-title
+                  a(href='#', data-toggle='modal', data-target='#SoftwareDefinedNetwork') #{book.name}
+                h6 Rs 1565
+                p.card-text #{book.description}
+              .card-footer
+                small.text-muted ★ ★ ★ ★ ★
+        // /.row
+    // /.col-lg-9
+  // /.row
+// /.container
