@@ -18,6 +18,7 @@ var env       = process.env.NODE_ENV || 'development';
 var config    = require(path.resolve(__dirname) + '/config.json')[env];
 var winston = require('winston'),
   expressWinston = require('express-winston');
+var sassMiddleware = require('node-sass-middleware');
 
 //Set globally
 app.locals.moment = moment;
@@ -36,6 +37,15 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(sassMiddleware({
+  /* Options */
+  src: __dirname,
+  dest: path.join(__dirname, 'public'),
+  debug: true,
+  outputStyle: 'compressed'
+}));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/components',  express.static(__dirname + '/node_modules'));
 
@@ -98,3 +108,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
