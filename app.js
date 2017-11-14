@@ -40,10 +40,10 @@ app.use(cookieParser());
 
 app.use(sassMiddleware({
   /* Options */
-  src: __dirname,
+  src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
-  debug: true,
-  outputStyle: 'compressed'
+  indentedSyntax: false,
+  sourceMap: true
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
