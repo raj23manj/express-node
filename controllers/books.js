@@ -3,17 +3,36 @@ const router = express.Router();
 const models = require('../server/models/');
 const multer  = require('multer')
 const upload = multer({dest: './uploads'});
+const async = require('async');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    models.Book.findAll({
+  // models.Category.findAll({ order: [['name', 'ASC']] }).then(function(categories){
+  //   models.Book.findAll({
+  //     include: [models.Author, models.Category],
+  //     order: [
+  //       ['id', 'DESC']
+  //     ]
+  //   }).then(function(data){
+  //     res.render('books/index', { title: 'Books Index', data: data,
+  //                                 categories: categories });
+  //   });
+  // });
+  async.parallel({
+    books: function(callback) {
+      models.Book.findAll({
         include: [models.Author, models.Category],
         order: [
-            ['id', 'DESC']
-        ]
-    }).then(function(data){
-        res.render('books/index', { title: 'Books Index', data: data });
-    });
+          ['id', 'DESC']
+        ]}).exec(callback);
+    },
+    categories: function(callback) {
+      models.Category.findAll({ order: [['name', 'ASC']] }).exec(callback);
+    },
+  }, function(err, results) {
+    if (err) { return next(err); }
+    res.render('books/index', {title: 'Books Index', data: results.data, categories: results.categories } );
+  });
 });
 
 router.get('/new', function(req, res, next) {
