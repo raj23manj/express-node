@@ -1,0 +1,64 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 54px; }
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px !important;
+  }
+}
+.navbar-brand.drg-logo img {
+  width: 65px;
+  height: 25px;
+  margin: 4px; }
+
+.card-body h5.card-title {
+  font-size: 16px; }
+.card-body h6 {
+  font-size: 14px; }
+.card-body p {
+  font-size: 12px; }
+
+.card:hover {
+  box-shadow: 0 0 3px 3px #e6e6e6; }
+
+/*Image Upload Preview Stuff*/
+#image-preview {
+  width: 400px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  color: #ecf0f1; }
+
+#image-preview input {
+  line-height: 200px;
+  font-size: 200px;
+  position: absolute;
+  opacity: 0;
+  z-index: 10; }
+
+#image-preview label {
+  position: absolute;
+  z-index: 5;
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: #bdc3c7;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center; }
+
+/*# sourceMappingURL=custom-DBS.css.map */

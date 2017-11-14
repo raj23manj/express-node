@@ -7,6 +7,7 @@ const async = require('async');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
   // models.Category.findAll({ order: [['name', 'ASC']] }).then(function(categories){
   //   models.Book.findAll({
   //     include: [models.Author, models.Category],
@@ -18,20 +19,26 @@ router.get('/', function(req, res, next) {
   //                                 categories: categories });
   //   });
   // });
+
   async.parallel({
     books: function(callback) {
       models.Book.findAll({
         include: [models.Author, models.Category],
         order: [
           ['id', 'DESC']
-        ]}).exec(callback);
+        ]}).
+      then(function(data){
+        callback(null, data)
+      });
     },
     categories: function(callback) {
-      models.Category.findAll({ order: [['name', 'ASC']] }).exec(callback);
+      models.Category.findAll({ order: [['name', 'ASC']] }).then(function(data){
+        callback(null, data)
+      });
     },
   }, function(err, results) {
     if (err) { return next(err); }
-    res.render('books/index', {title: 'Books Index', data: results.data, categories: results.categories } );
+    res.render('books/index', {title: 'Books Index', data: results.books, categories: results.categories } );
   });
 });
 
