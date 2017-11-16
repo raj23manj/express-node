@@ -7,29 +7,15 @@ const async = require('async');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
-  // models.Category.findAll({ order: [['name', 'ASC']] }).then(function(categories){
-  //   models.Book.findAll({
-  //     include: [models.Author, models.Category],
-  //     order: [
-  //       ['id', 'DESC']
-  //     ]
-  //   }).then(function(data){
-  //     res.render('books/index', { title: 'Books Index', data: data,
-  //                                 categories: categories });
-  //   });
-  // });
-
   async.parallel({
     books: function(callback) {
       models.Book.findAll({
         include: [models.Author, models.Category],
         order: [
           ['id', 'DESC']
-        ]}).
-      then(function(data){
-        callback(null, data)
-      });
+        ]}).then(function(data){
+          callback(null, data)
+        });
     },
     categories: function(callback) {
       models.Category.findAll({ order: [['name', 'ASC']] }).then(function(data){
@@ -105,4 +91,13 @@ router.get('/:id/destroy', function (req, res) {
     });
 });
 
+router.get('/search/:category_id', function (req, res) {
+  models.Category.findById(req.params.id).then(function(category){
+    if(category){
+
+    }
+  }).then(function(data){
+    res.redirect('/books/search');
+  });
+});
 module.exports = router;
