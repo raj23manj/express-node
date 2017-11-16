@@ -6,6 +6,8 @@ block content
     include ../partials/search_nav
     .col-lg-9
       .row.my-4
+        if data.length == 0
+          div.empty_record No Data Present
         each book in data
           .col-lg-3.col-md-4.mb-4
             .card.h-100
@@ -18,7 +20,3 @@ block content
                 p.card-text #{book.description}
               .card-footer
                 small.text-muted ★ ★ ★ ★ ★
-        // /.row
-    // /.col-lg-9
-  // /.row
-// /.container
