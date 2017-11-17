@@ -19,6 +19,7 @@ var config    = require(path.resolve(__dirname) + '/config.json')[env];
 var winston = require('winston'),
   expressWinston = require('express-winston');
 var sassMiddleware = require('node-sass-middleware');
+var PrettyError = require('pretty-error');
 
 //Set globally
 app.locals.moment = moment;
@@ -98,15 +99,20 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+//error handler
+// app.use(function(err, req, res, next) {
+//   // set locals, only providing error in development
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get('env') === 'development' ? err : {};
+//
+//   // render the error page
+//   res.status(err.status || 500);
+//   res.render('error');
+// });
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+pe = new PrettyError();
+// and use it for our app's error handler:
+app.use(function(err, req, res, next){
+  console.log(pe.render(err));
+  next();
 });
-
-
