@@ -116,4 +116,31 @@ router.get('/search/:category_id', function (req, res) {
   });
 });
 
+router.get('/search', function (req, res) {
+  async.parallel({
+    books: function(callback) {
+      models.Book.findAll({
+        where: {
+            name: {
+              $like: '%'+req.query.search+'%'
+            }
+        },
+        include: [models.Author, models.Category],
+        order: [
+          ['id', 'DESC']
+        ]}).then(function(data){
+        callback(null, data)
+      });
+    },
+    categories: function(callback) {
+      models.Category.findAll({ order: [['name', 'ASC']] }).then(function(data){
+        callback(null, data)
+      });
+    },
+  }, function(err, results) {
+    if (err) { return next(err); }
+    res.render('books/search.jade', {data: results.books, categories: results.categories })
+  });
+});
+
 module.exports = router;
