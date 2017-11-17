@@ -12,27 +12,29 @@ router.get('/', function (req, res, next) {
       ['id', 'DESC']
     ]
   }).then(function (data) {
-    res.render('categories/index', {title: 'Category Index', data: data});
+    res.render('categories/index', {title: 'Category Index', data: data, errors: {}});
   });
 });
 
 router.get('/new', function (req, res, next) {
-  res.render('categories/new', {object: {}});
+  res.render('categories/new', {errors: {}, object: {}});
 });
 
 router.post('/create', function(req, res) {
   var category = models.Category.build({name: req.body.name});
-  errors = category.validate();
-    if(errors){
+  category.validate().then(function(errors){
+     console.log(errors["errors"]);
+    if(errors["errors"]){
       req.flash('info', 'Correct The Errors !');
-      res.render('categories/new', {errors: errors, object: {}});
+      res.render('categories/new', {errors: errors["errors"], object: {}});
     }else{
       category.save().then(function() {
         req.flash('info', 'Created Successfully !');
-        res.redirect('/categories');
+        res.redirect('/categories/');
       });
     }
   });
+});
 
 router.get('/:id/edit', function (req, res) {
   models.Category.findOne({

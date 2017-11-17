@@ -1,5 +1,3 @@
 if errors
-    - for (var prop in errors) {
-        -  if (errors.hasOwnProperty(prop))
-          -  for (var i = 0; i < errors[prop].length; i)
-            .alert.alert-danger #{errors[prop][i]}
+  for msg in errors
+    .alert.alert-danger #{msg["message"]}
