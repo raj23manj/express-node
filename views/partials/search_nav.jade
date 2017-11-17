@@ -1,9 +1,27 @@
-.col-lg-3
-	h3.my-4 FILTERS
-	.list-group
-		a.list-group-item(href='#') UX Design
-		a.list-group-item(href='#') ROR
-		a.list-group-item(href='#') Angular
-		a.list-group-item(href='#') Big Data
-		a.list-group-item(href='#') Hadoop
-		a.list-group-item(href='#') Node Js
+.row
+	.col.mt-5.align-self-end
+		.input-group
+			.input-group-btn.search-panel
+				button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+					span#search_concept Filter by
+					span.caret
+				ul.dropdown-menu(role='menu')
+					li.divider UX Design
+					li
+						a(href='#') ROR
+					li
+						a(href='#') Angular
+					li
+						a(href='#') Solar Search
+					li
+						a(href='#') Big Data
+					li
+						a(href='#') Hadoop
+					li
+						a(href='#') Node Js
+			input#search_param(type='hidden', name='search_param', value='all')
+			input.form-control#search_input(type='text', name='x', placeholder='Search term...')
+			span.input-group-btn
+				button.btn.btn-success(type='button')
+					span.glyphicon.glyphicon-search
+					| Search
