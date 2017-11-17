@@ -1,5 +1,10 @@
 extends ../layout
 
 block content
-  form(action="/books/#{object.id}" method="post")
-    include partials/book_details
+  .row.justify-content-md-center
+    .col-md-8
+      include ../partials/errors
+      form(action="/books/#{object.id}" method="post" enctype='multipart/form-data' class="my-4")
+        div.form-title
+          h4 ADD BOOK
+        include partials/book_details

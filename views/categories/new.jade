@@ -1,6 +1,10 @@
 extends ../layout
 
 block content
-  include ../partials/errors
-  form(action="/categories/create" method="post")
-      include partials/form
+  .row.justify-content-md-center
+    .col-md-8
+      include ../partials/errors
+      form(action="/categories/create" method="post" class="my-4")
+        div.form-title
+          h4 ADD CATEGORY
+        include partials/form

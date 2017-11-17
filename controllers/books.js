@@ -78,7 +78,6 @@ router.post('/:id', function(req, res) {
         }).then(function(data){
             res.redirect('/books');
     });
-
 });
 
 router.get('/:id/destroy', function (req, res) {

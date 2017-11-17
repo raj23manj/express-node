@@ -1,11 +1,17 @@
 extends ../layout
 
 block content
-  h1 Welcome to Category Index page
-  a(href='/categories/new') Create new Category
-  div
-    each category in data
-      li
-        Category Name:#{category.name} -
-        a(href='/categories/#{category.id}/edit') Edit -
-        a(href='/categories/#{category.id}/destroy') Delete
+  .row.justify-content-md-center
+    .col-md-8
+      div.my-4
+        div.form-title
+          h4 CATEGORIES
+          a(href='/categories/new') Create new Category
+          each category in data
+            .form-row
+              .form-group.col-md-6
+                label Category Name: #{category.name}
+              .form-group.col-md-6
+                .form-group.text-right
+                  a(href='/categories/#{category.id}/edit' class='col-md-3 btn btn-info') Edit
+                  a(href='/categories/#{category.id}/destroy' class='col-md-3 btn btn-danger') Delete

@@ -1,18 +1,25 @@
-div.col-md-6
-  label.col-md-12 Book Name:
-    input(type="text" name="name" value="#{object.name}")
-
-  label.col-md-12 Category:
-    select(name="CategoryId")
-      each obj in categories
-        option(value= obj.id, selected=object.CategoryId === obj.id ? true : false)= obj.name
-
-  label.col-md-12 Author:
-    select(name="AuthorId")
+.form-row
+  .form-group.col-md-6
+    label.col-md-12 Book Name:
+      - var value = (_.isEmpty(object)) ? "" : object.name
+      input(type="text" name="name" value="#{value}" class="form-control")
+  .form-group.col-md-6
+    label Author:
+    select(name="AuthorId" class='form-control')
       each obj in authors
         option(value= obj.id, selected=object.AuthorId === obj.id ? true : false)= obj.name
 
-  label.col-md-12 File
-    input(type='file', name='uploadBookName')
+.form-row
+  .form-group.col-md-6
+    label Category:
+    select(name="CategoryId" class='form-control')
+      each obj in categories
+        option(value= obj.id, selected=object.CategoryId === obj.id ? true : false)= obj.name
+  .form-group.col-md-6
+    label Upload Book
+    div
+      input(type='file', name='uploadBookName' class='form-control')
 
-  input.col-md-3(type="submit" value="#{buttonName}")
+
+.form-group.text-right
+  input.col-md-3(type="submit" value="#{buttonName}" class="btn btn-primary")
