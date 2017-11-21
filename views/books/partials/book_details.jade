@@ -1,8 +1,8 @@
 .form-row
   .form-group.col-md-6
     label.col-md-12 Book Name:
-      - var value = (_.isEmpty(object)) ? "" : object.name
-      input(type="text" name="name" value="#{value}" class="form-control")
+    - var value = (_.isEmpty(object)) ? "" : object.name
+    input(type="text" name="name" value="#{value}" class="form-control")
   .form-group.col-md-6
     label Author:
     select(name="AuthorId" class='form-control')
@@ -16,9 +16,18 @@
       each obj in categories
         option(value= obj.id, selected=object.CategoryId === obj.id ? true : false)= obj.name
   .form-group.col-md-6
-    label Upload Book
+    label Upload Book:
     div
       input(type='file', name='uploadBookName' class='form-control')
+
+.form-row
+  .form-group.col-md-6
+    label Description:
+
+  .form-group.col-md-6
+    label Book Image:
+    div
+      input(type='file', name='uploadBookImage' class='form-control')
 
 
 .form-group.text-right
