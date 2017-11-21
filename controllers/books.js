@@ -1,4 +1,5 @@
 const express = require('express');
+var fs = require('fs');
 const router = express.Router();
 const models = require('../server/models/');
 const multer  = require('multer')
@@ -169,6 +170,18 @@ router.get('/show/:id', function(req, res) {
     res.render('books/show', {book: book});
   });
 });
+
+// router.get('/view_pdf/:id', function(req, res){
+//   models.Book.find({where: {id: req.params.id}}).then(function(book){
+//     var tempFile="/uploads/" + book.uploadBookName;
+//     console.log('$$$$$');
+//     console.log(tempFile);
+//     fs.readFile(tempFile, function (err,data){
+//       res.contentType("application/pdf");
+//       res.send(data);
+//     });
+//   });
+// });
 
 module.exports = router;
 
