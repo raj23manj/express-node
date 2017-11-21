@@ -2,8 +2,18 @@ const express = require('express');
 const router = express.Router();
 const models = require('../server/models/');
 const multer  = require('multer')
-const upload = multer({dest: './uploads'});
 const async = require('async');
+const path = require('path');
+const upload = multer({dest: './uploads',
+                       fileFilter: function (req, file, cb) {
+                         if(file.fieldname == 'uploadBookName'){
+                          if (path.extname(file.originalname) !== '.pdf'){
+                            return cb(new Error('Only pdfs are allowed'))
+                          }
+                         }
+                        cb(null, true)
+                       }
+                      });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -28,25 +38,28 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/new', function(req, res, next) {
-    models.Category.findAll({ order: [['name', 'ASC']] }).then(function(categories){
-      models.Author.findAll({ order: [['name', 'ASC']] }).then(function(authors){
-        res.render('books/new', {categories: categories,
-                                 authors: authors,
-                                 buttonName: 'Create',
-                                 object: {}});
-      });
-    });
+router.get('/new', function(req, res) {
+  new_or_edit(req, res, null);
 });
 
-router.post('/create', upload.single('uploadBookName'), function(req, res) {
-    models.Book.create({
-        name: req.body.name,
-        AuthorId: req.body.AuthorId,
-        CategoryId: req.body.CategoryId,
-        uploadBookName: req.file.filename
-    }).then(function() {
-        res.redirect('/books');
+router.post('/create', upload.fields([{name: 'uploadBookName', maxCount: 1}, {name: 'uploadBookImage', maxCount: 1}]), function(req, res) {
+  var book = models.Book.build({ name: req.body.name,
+                                 AuthorId: req.body.AuthorId,
+                                 CategoryId: req.body.CategoryId,
+                                 uploadBookName: (_.isEmpty(req.files["uploadBookName"])) ? '' : req.files["uploadBookName"][0].filename,
+                                 image: (_.isEmpty(req.files["uploadBookImage"])) ? '' : req.files["uploadBookImage"][0].filename,
+                                 description: req.body.description
+                               });
+    book.validate().then(function(errors) {
+      if(errors)
+      {
+        new_or_edit(req, res, errors["errors"]);
+      }else {
+        book.save().then(function() {
+          req.flash('info', 'Created Successfully !');
+          res.redirect('/books');
+        });
+      }
     });
 });
 
@@ -143,3 +156,15 @@ router.get('/search', function (req, res) {
 });
 
 module.exports = router;
+
+var new_or_edit = function(req, res, errors){
+  return models.Category.findAll({ order: [['name', 'ASC']] }).then(function(categories){
+    models.Author.findAll({ order: [['name', 'ASC']] }).then(function(authors){
+        res.render('books/new', {categories: categories,
+        authors: authors,
+        buttonName: 'Create',
+        errors:  errors,
+        object: {}});
+    });
+  });
+}

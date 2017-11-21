@@ -1,4 +1,3 @@
 .container-fluid
-  - if (messages.info)
-  .message.info
-    span= messages.info
+  if (messages.info)
+    .alert.alert-success #{messages.info}

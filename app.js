@@ -9,7 +9,6 @@ var upload = multer({dest: './uploads'});
 var expressFlash = require('express-flash');
 var session = require('express-session');
 var moment = require('moment');
-var empty = require('is-empty');
 var _ = require('lodash');
 var app = express();
 var pg = require('pg')
@@ -23,11 +22,10 @@ var PrettyError = require('pretty-error');
 
 //Set globally
 app.locals.moment = moment;
-app.locals.empty = empty;
-app.locals._ = _;
+//app.locals._ = _;
 
 global.appRoot = path.resolve(__dirname);
-
+global._ = _;
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade');

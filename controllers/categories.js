@@ -23,8 +23,7 @@ router.get('/new', function (req, res, next) {
 router.post('/create', function(req, res) {
   var category = models.Category.build({name: req.body.name});
   category.validate().then(function(errors){
-     console.log(errors["errors"]);
-    if(errors["errors"]){
+    if(errors){
       req.flash('info', 'Correct The Errors !');
       res.render('categories/new', {errors: errors["errors"], object: {}});
     }else{
