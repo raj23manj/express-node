@@ -4,7 +4,16 @@ const models = require('../server/models/');
 const multer  = require('multer')
 const async = require('async');
 const path = require('path');
-const upload = multer({dest: './uploads',
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now()+ file.originalname)
+  }
+})
+
+const upload = multer({storage: storage,
                        fileFilter: function (req, file, cb) {
                          if(file.fieldname == 'uploadBookName'){
                           if (path.extname(file.originalname) !== '.pdf'){
@@ -13,7 +22,7 @@ const upload = multer({dest: './uploads',
                          }
                         cb(null, true)
                        }
-                      });
+                    });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -152,6 +161,12 @@ router.get('/search', function (req, res) {
   }, function(err, results) {
     if (err) { return next(err); }
     res.render('books/search.jade', {data: results.books, categories: results.categories })
+  });
+});
+
+router.get('/show/:id', function(req, res) {
+  models.Book.find({where: {id: req.params.id}, include: [models.Author, models.Category] }).then(function(book){
+    res.render('books/show', {book: book});
   });
 });
 
