@@ -18,16 +18,17 @@
   .form-group.col-md-6
     label Upload Book:
     div
-      input(type='file', name='uploadBookName' class='form-control')
+      input(type='file', name='uploadBookName' class='form-control' accept="application/pdf")
 
 .form-row
   .form-group.col-md-6
     label Description:
-
+    div
+      input(type='text', name='description' class='form-control')
   .form-group.col-md-6
     label Book Image:
     div
-      input(type='file', name='uploadBookImage' class='form-control')
+      input(type='file', name='uploadBookImage' class='form-control' multiple accept='image/*')
 
 
 .form-group.text-right

@@ -22,6 +22,12 @@ module.exports = function(sequelize, DataTypes) {
     CategoryId: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    image: {
+      type: DataTypes.STRING
+    },
+    description: {
+      type: DataTypes.TEXT
     }
   },
   {
