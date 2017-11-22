@@ -28,6 +28,7 @@ html(dir='ltr', mozdisallowselectionprint='', moznomarginboxes='')
     link(rel='stylesheet', href='/stylesheets/viewer.css')
     // This snippet is used in production (included from viewer.html)
     link(rel='resource', type='application/l10n', href='/locale/locale.properties')
+    script(src='/components/jquery/dist/jquery.js')
     script(src='/components/pdfjs-dist/build/pdf.js')
     script(type="text/javascript").
       window.filePdfPathApp = '/uploads/' + "#{book.uploadBookName}";
@@ -35,6 +36,7 @@ html(dir='ltr', mozdisallowselectionprint='', moznomarginboxes='')
       window.filePdfWorker = '/components/pdfjs-dist/build/pdf.worker.js';
       window.filePdfCmaps = '/pdf/cmaps/';
     script(src='/javascripts/viewer.js')
+    script(src='/javascripts/custom_viewer.js')
   body.loadingInProgress(tabindex='1')
     #outerContainer
       #sidebarContainer

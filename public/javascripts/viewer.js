@@ -10050,7 +10050,6 @@
 
     "use strict";
 
-     console.log(filePdfPathApp);
     var DEFAULT_URL = filePdfPathApp;
     ;
     var pdfjsWebApp = void 0;
