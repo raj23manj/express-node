@@ -1573,22 +1573,22 @@
           if (!_this6.supportsPrinting) {
             return;
           }
-          pdfDocument.getJavaScript().then(function (javaScript) {
-            if (javaScript.length) {
-              console.warn('Warning: JavaScript is not supported');
-              _this6.fallback(_pdfjsLib.UNSUPPORTED_FEATURES.javaScript);
-            }
-            var regex = /\bprint\s*\(/;
-            for (var i = 0, ii = javaScript.length; i < ii; i++) {
-              var js = javaScript[i];
-              if (js && regex.test(js)) {
-                setTimeout(function () {
-                  window.print();
-                });
-                return;
-              }
-            }
-          });
+          // pdfDocument.getJavaScript().then(function (javaScript) {
+          //   if (javaScript.length) {
+          //     console.warn('Warning: JavaScript is not supported');
+          //     _this6.fallback(_pdfjsLib.UNSUPPORTED_FEATURES.javaScript);
+          //   }
+          //   var regex = /\bprint\s*\(/;
+          //   for (var i = 0, ii = javaScript.length; i < ii; i++) {
+          //     var js = javaScript[i];
+          //     if (js && regex.test(js)) {
+          //       setTimeout(function () {
+          //         window.print();
+          //       });
+          //       return;
+          //     }
+          //   }
+          // });
         });
         Promise.all([onePageRendered, _ui_utils.animationStarted]).then(function () {
           pdfDocument.getOutline().then(function (outline) {
@@ -2167,7 +2167,7 @@
       window.print();
     }
     function webViewerDownload() {
-      PDFViewerApplication.download();
+      //PDFViewerApplication.download();
     }
     function webViewerFirstPage() {
       if (PDFViewerApplication.pdfDocument) {
@@ -2374,8 +2374,8 @@
       if (cmd === 1 || cmd === 8) {
         switch (evt.keyCode) {
           case 83:
-            PDFViewerApplication.download();
-            handled = true;
+            //PDFViewerApplication.download();
+            //handled = true;
             break;
         }
       }
