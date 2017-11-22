@@ -1,27 +1,32 @@
 extends ../layout
 
 block content
-  .row.justify-content-md-center
-    .col-md-8
-      .my-4
-        div.form-title
-          h4 Book Details
-
-        .form-row
-          .form-group.col-md-6
-            div.col-md-12
-              | #{book.name}
-            div.col-md-12
-              | #{book.Category.name}
-            div.col-md-12
-              | #{book.Author.name}
-            div.col-md-12
-              | #{book.description}
-            div.col-md-12
-              a(href="/books/#{book.id}/view_pdf" , target="_blank") PDF Viewer
-
-          .form-group.col-md-6
-            div
-              - var image = (_.isEmpty(book.image)) ? '/images/no_image.png' : "/uploads/" + book.image
-              img.card-img-top(src="#{image}", alt='')
-
+  .container
+    nav.my-4(aria-label='breadcrumb', role='navigation')
+      ol.breadcrumb
+        li.breadcrumb-item
+          a(href='/books') Home
+        li.breadcrumb-item.active(aria-current='page') Book Details
+    .row.my-4
+      .col-lg-3
+        include ../books/partials/book_image
+      .col-lg-9
+        h5
+          | #{book.name}
+        ul.unstyle
+          li
+            span Author :
+            strong #{book.Author.name}
+          li
+            span Category :
+            strong #{book.Category.name}
+        p.card-text
+          | #{book.description}
+    .row.my-4
+      .col
+        h5
+          | Read Book
+        .canvas
+          small Want to read the book ?
+          a(href="/books/#{book.id}/view_pdf" , target="_blank") Click
+          

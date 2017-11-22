@@ -6,8 +6,7 @@
 		.col-lg-3.col-md-4.mb-4
 			.card.h-100
 				a(href='#')
-					- var image = (_.isEmpty(book.image)) ? '/images/no_image.png' : '/uploads/'+ book.image
-					img.card-img-top(src="#{image}", alt='')
+					include ../partials/book_image
 				.card-body
 					h5.card-title
 						a(href="/books/show/#{book.id}") #{book.name}
