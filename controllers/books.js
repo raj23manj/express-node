@@ -171,17 +171,13 @@ router.get('/show/:id', function(req, res) {
   });
 });
 
-// router.get('/view_pdf/:id', function(req, res){
-//   models.Book.find({where: {id: req.params.id}}).then(function(book){
-//     var tempFile="/uploads/" + book.uploadBookName;
-//     console.log('$$$$$');
-//     console.log(tempFile);
-//     fs.readFile(tempFile, function (err,data){
-//       res.contentType("application/pdf");
-//       res.send(data);
-//     });
-//   });
-// });
+router.get('/:id/view_pdf', function(req, res){
+  models.Book.find({where: {id: req.params.id}}).then(function(book){
+    res.render('books/view_pdf',{book: book});
+  });
+});
+
+
 
 module.exports = router;
 
@@ -196,3 +192,4 @@ var new_or_edit = function(req, res, errors){
     });
   });
 }
+
