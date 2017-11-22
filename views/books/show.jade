@@ -17,6 +17,8 @@ block content
               | #{book.Author.name}
             div.col-md-12
               | #{book.description}
+            div.col-md-12
+              a(href="/books/#{book.id}/view_pdf" , target="_blank") PDF Viewer
 
           .form-group.col-md-6
             div
