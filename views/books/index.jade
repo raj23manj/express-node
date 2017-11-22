@@ -9,14 +9,16 @@ block content
       .row.my-4
         if data.length == 0
           div.empty_record No Data Present
+
         each book in data
           .col-lg-3.col-md-4.mb-4
             .card.h-100
               a(href='#')
-                img.card-img-top(src='/images/drg-big@2x.png', alt='')
+                - var image = (_.isEmpty(book.image)) ? '/images/no_image.png' : book.image
+                img.card-img-top(src="#{image}", alt='')
               .card-body
                 h5.card-title
-                  a(href='#', data-toggle='modal', data-target='#SoftwareDefinedNetwork') #{book.name}
+                  a(href="/books/show/#{book.id}") #{book.name}
                 h6 Rs 1565
                 p.card-text #{book.description}
               .card-footer

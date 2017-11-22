@@ -1,10 +1,20 @@
 const express = require('express');
+var fs = require('fs');
 const router = express.Router();
 const models = require('../server/models/');
 const multer  = require('multer')
 const async = require('async');
 const path = require('path');
-const upload = multer({dest: './uploads',
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now()+ file.originalname)
+  }
+})
+
+const upload = multer({storage: storage,
                        fileFilter: function (req, file, cb) {
                          if(file.fieldname == 'uploadBookName'){
                           if (path.extname(file.originalname) !== '.pdf'){
@@ -13,7 +23,7 @@ const upload = multer({dest: './uploads',
                          }
                         cb(null, true)
                        }
-                      });
+                    });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -155,6 +165,20 @@ router.get('/search', function (req, res) {
   });
 });
 
+router.get('/show/:id', function(req, res) {
+  models.Book.find({where: {id: req.params.id}, include: [models.Author, models.Category] }).then(function(book){
+    res.render('books/show', {book: book});
+  });
+});
+
+router.get('/:id/view_pdf', function(req, res){
+  models.Book.find({where: {id: req.params.id}}).then(function(book){
+    res.render('books/view_pdf',{book: book});
+  });
+});
+
+
+
 module.exports = router;
 
 var new_or_edit = function(req, res, errors){
@@ -168,3 +192,4 @@ var new_or_edit = function(req, res, errors){
     });
   });
 }
+
