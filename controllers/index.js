@@ -7,7 +7,6 @@ var models = require('../server/models/index');
 router.get('/', function(req, res, next) {
   models.Todo.findAll().then(function(data){
     res.render('index', { title: 'Express', data: data });
-    console.log(data);
   });
 });
 

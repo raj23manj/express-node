@@ -1,0 +1,2786 @@
+//colors
+$white: white;
+$black_70: hsla(0,0%,0%,.7);
+$color_violet_eggplant_approx: rgb(180, 0, 170);
+$color_japanese_laurel_approx: rgb(0, 100, 0);
+$blue: rgb(0,0,255);
+$yellow: #ff0;
+$color_blue_ribbon_13_approx: rgba(0, 54, 255, 0.13);
+$black: #000;
+$pale_canary: #ffff99;
+$color_mine_shaft_approx: #333;
+$color_cape_cod_approx: #404040;
+$black_10: hsla(0,0%,0%,.1);
+$black_25: hsla(0,0%,0%,.25);
+$white_5: hsla(0,0%,100%,.05);
+$color_gravel_99_approx: hsla(0,0%,30%,.99);
+$color_cape_cod_95_approx: hsla(0,0%,25%,.95);
+$black_15: hsla(0,0%,0%,.15);
+$color_gravel_approx: #474747;
+$color_fuscous_gray_99_approx: hsla(0,0%,32%,.99);
+$color_tundora_95_approx: hsla(0,0%,27%,.95);
+$white_8: hsla(0,0%,100%,.08);
+$color_alto_approx: #ddd;
+$color_mountain_mist_approx: #999;
+$color_pink_swan_approx: #bbb;
+$color_iron_approx: hsl(0,0%,85%);
+$black_50: hsla(0,0%,0%,.5);
+$black_30: rgba(0, 0, 0, 0.3);
+$color_fuscous_gray_approx: hsl(0, 0%, 32%);
+$color_casper_approx: #a6b7d0;
+$color_bittersweet_approx: rgb(255, 102, 102);
+$black_12: hsla(0,0%,0%,.12);
+$black_35: hsla(0,0%,0%,.35);
+$black_32: hsla(0,0%,0%,.32);
+$black_38: hsla(0,0%,0%,.38);
+$black_42: hsla(0,0%,0%,.42);
+$white_15: hsla(0,0%,100%,.15);
+$black_20: hsla(0,0%,0%,.2);
+$black_5: hsla(0,0%,0%,.05);
+$white_3: hsla(0,0%,100%,.03);
+$white_80: hsla(0,0%,100%,.8);
+$black_40: hsla(0,0%,0%,.4);
+$black_45: hsla(0,0%,0%,.45);
+$black_55: hsla(0,0%,0%,.55);
+$concrete: hsl(0,0%,95%);
+$color_masala_approx: hsl(0,0%,24%);
+$white_50: rgba(255, 255, 255, .5);
+$color_mantis_approx: #70db55;
+$white_9: hsla(0,0%,100%,.09);
+$white_11: hsla(0,0%,100%,.11);
+$black_43: hsla(0,0%,0%,.43);
+$color_picton_blue_80_approx: hsla(204,100%,65%,.8);
+$color_picton_blue_85_approx: hsla(204,100%,65%,.85);
+$color_picton_blue_90_approx: hsla(204,100%,65%,.9);
+$white_20: hsla(0,0%,100%,.2);
+$white_90: hsla(0,0%,100%,.9);
+$white_30: hsla(0,0%,100%,.3);
+$white_10: hsla(0,0%,100%,.1);
+$white_100: hsla(0,0%,100%,1);
+$white_2: hsla(0,0%,100%,.02);
+$blue_30: rgba(0,0,255,0.3);
+$color_carnation_approx: #ff5555;
+$color_storm_dust_approx: #666666;
+$color_gallery_approx: #eeeeee;
+$color_mint_green_approx: rgb(128,255,128);
+$yellow_10: rgba(255, 255, 0, 0.1);
+$red_50: rgba(255, 0, 0, 0.5);
+$white_60: rgba(255,255,255, .6);
+
+//fonts
+$font_0: monospace;
+$font_1: courier;
+
+//data-uris
+$data_uri_0: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
+//urls
+$url_0: url(images/shadow.png);
+$url_1: url(images/loading-icon.gif);
+$url_2: url(images/texture.png);
+$url_3: url(images/loading-small.png);
+$url_4: url(images/toolbarButton-menuArrows.png);
+$url_5: url(images/toolbarButton-sidebarToggle.png);
+$url_6: url(images/toolbarButton-sidebarToggle-rtl.png);
+$url_7: url(images/toolbarButton-secondaryToolbarToggle.png);
+$url_8: url(images/toolbarButton-secondaryToolbarToggle-rtl.png);
+$url_9: url(images/findbarButton-previous.png);
+$url_10: url(images/findbarButton-previous-rtl.png);
+$url_11: url(images/findbarButton-next.png);
+$url_12: url(images/findbarButton-next-rtl.png);
+$url_13: url(images/toolbarButton-pageUp.png);
+$url_14: url(images/toolbarButton-pageUp-rtl.png);
+$url_15: url(images/toolbarButton-pageDown.png);
+$url_16: url(images/toolbarButton-pageDown-rtl.png);
+$url_17: url(images/toolbarButton-zoomOut.png);
+$url_18: url(images/toolbarButton-zoomIn.png);
+$url_19: url(images/toolbarButton-presentationMode.png);
+$url_20: url(images/toolbarButton-print.png);
+$url_21: url(images/toolbarButton-openFile.png);
+$url_22: url(images/toolbarButton-download.png);
+$url_23: url(images/toolbarButton-bookmark.png);
+$url_24: url(images/toolbarButton-viewThumbnail.png);
+$url_25: url(images/toolbarButton-viewOutline.png);
+$url_26: url(images/toolbarButton-viewOutline-rtl.png);
+$url_27: url(images/toolbarButton-viewAttachments.png);
+$url_28: url(images/toolbarButton-search.png);
+$url_29: url(images/secondaryToolbarButton-firstPage.png);
+$url_30: url(images/secondaryToolbarButton-lastPage.png);
+$url_31: url(images/secondaryToolbarButton-rotateCcw.png);
+$url_32: url(images/secondaryToolbarButton-rotateCw.png);
+$url_33: url(images/secondaryToolbarButton-selectTool.png);
+$url_34: url(images/secondaryToolbarButton-handTool.png);
+$url_35: url(images/secondaryToolbarButton-documentProperties.png);
+$url_36: url(images/treeitem-expanded.png);
+$url_37: url(images/treeitem-collapsed.png);
+$url_38: url(images/treeitem-collapsed-rtl.png);
+$url_39: url(images/grab.cur);
+$url_40: url(images/grabbing.cur);
+$url_41: url(images/loading-small@2x.png);
+$url_42: url(images/toolbarButton-menuArrows@2x.png);
+$url_43: url(images/toolbarButton-sidebarToggle@2x.png);
+$url_44: url(images/toolbarButton-sidebarToggle-rtl@2x.png);
+$url_45: url(images/toolbarButton-secondaryToolbarToggle@2x.png);
+$url_46: url(images/toolbarButton-secondaryToolbarToggle-rtl@2x.png);
+$url_47: url(images/findbarButton-previous@2x.png);
+$url_48: url(images/findbarButton-previous-rtl@2x.png);
+$url_49: url(images/findbarButton-next@2x.png);
+$url_50: url(images/findbarButton-next-rtl@2x.png);
+$url_51: url(images/toolbarButton-pageUp@2x.png);
+$url_52: url(images/toolbarButton-pageUp-rtl@2x.png);
+$url_53: url(images/toolbarButton-pageDown@2x.png);
+$url_54: url(images/toolbarButton-pageDown-rtl@2x.png);
+$url_55: url(images/toolbarButton-zoomIn@2x.png);
+$url_56: url(images/toolbarButton-zoomOut@2x.png);
+$url_57: url(images/toolbarButton-presentationMode@2x.png);
+$url_58: url(images/toolbarButton-print@2x.png);
+$url_59: url(images/toolbarButton-openFile@2x.png);
+$url_60: url(images/toolbarButton-download@2x.png);
+$url_61: url(images/toolbarButton-bookmark@2x.png);
+$url_62: url(images/toolbarButton-viewThumbnail@2x.png);
+$url_63: url(images/toolbarButton-viewOutline@2x.png);
+$url_64: url(images/toolbarButton-viewOutline-rtl@2x.png);
+$url_65: url(images/toolbarButton-viewAttachments@2x.png);
+$url_66: url(images/toolbarButton-search@2x.png);
+$url_67: url(images/secondaryToolbarButton-firstPage@2x.png);
+$url_68: url(images/secondaryToolbarButton-lastPage@2x.png);
+$url_69: url(images/secondaryToolbarButton-rotateCcw@2x.png);
+$url_70: url(images/secondaryToolbarButton-rotateCw@2x.png);
+$url_71: url(images/secondaryToolbarButton-selectTool@2x.png);
+$url_72: url(images/secondaryToolbarButton-handTool@2x.png);
+$url_73: url(images/secondaryToolbarButton-documentProperties@2x.png);
+$url_74: url(images/treeitem-expanded@2x.png);
+$url_75: url(images/treeitem-collapsed@2x.png);
+$url_76: url(images/treeitem-collapsed-rtl@2x.png);
+
+//@extend-elements
+//original selectors
+//.annotationLayer .textWidgetAnnotation input, .annotationLayer .textWidgetAnnotation textarea, .annotationLayer .choiceWidgetAnnotation select, .annotationLayer .buttonWidgetAnnotation.checkBox input, .annotationLayer .buttonWidgetAnnotation.radioButton input
+%extend_1 {
+  background-color: $color_blue_ribbon_13_approx;
+  border: 1px solid transparent;
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  font-size: 9px;
+  height: 100%;
+  padding: 0 3px;
+  vertical-align: top;
+  width: 100%;
+}
+
+//original selectors
+//.annotationLayer .textWidgetAnnotation input[disabled], .annotationLayer .textWidgetAnnotation textarea[disabled], .annotationLayer .choiceWidgetAnnotation select[disabled], .annotationLayer .buttonWidgetAnnotation.checkBox input[disabled], .annotationLayer .buttonWidgetAnnotation.radioButton input[disabled]
+%extend_2 {
+  background: none;
+  border: 1px solid transparent;
+  cursor: not-allowed;
+}
+
+//original selectors
+//#toolbarContainer, .findbar, .secondaryToolbar
+%extend_3 {
+  position: relative;
+  height: 32px;
+  background-color: $color_gravel_approx;
+  background-image: $url_2, linear-gradient($color_fuscous_gray_99_approx, $color_tundora_95_approx);
+}
+
+
+.textLayer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  opacity: 0.2;
+  line-height: 1.0;
+  > div {
+    color: transparent;
+    position: absolute;
+    white-space: pre;
+    cursor: text;
+    //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+    transform-origin: 0 0;
+  }
+  .highlight {
+    margin: -1px;
+    padding: 1px;
+    background-color: $color_violet_eggplant_approx;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 4px;
+    &.begin {
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 4px 0 0 4px;
+    }
+    &.end {
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 0 4px 4px 0;
+    }
+    &.middle {
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 0;
+    }
+    &.selected {
+      background-color: $color_japanese_laurel_approx;
+    }
+  }
+  ::selection {
+    background: $blue;
+  }
+  ::-moz-selection {
+    background: $blue;
+  }
+  .endOfContent {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    cursor: default;
+    &.active {
+      top: 0;
+    }
+  }
+}
+.annotationLayer {
+  section {
+    position: absolute;
+  }
+  .textWidgetAnnotation {
+    input {
+      @extend %extend_1;
+      &:hover {
+        border: 1px solid $black;
+      }
+      &:focus {
+        background: none;
+        border: 1px solid transparent;
+      }
+      &.comb {
+        font-family: $font_0;
+        padding-left: 2px;
+        padding-right: 0;
+        &:focus {
+          width: 115%;
+        }
+      }
+    }
+    textarea {
+      @extend %extend_1;
+      font: message-box;
+      font-size: 9px;
+      resize: none;
+      &:hover {
+        border: 1px solid $black;
+      }
+      &:focus {
+        background: none;
+        border: 1px solid transparent;
+      }
+    }
+    input[disabled] {
+      @extend %extend_2;
+    }
+    textarea[disabled] {
+      @extend %extend_2;
+    }
+  }
+  .choiceWidgetAnnotation {
+    select {
+      @extend %extend_1;
+      &:hover {
+        border: 1px solid $black;
+      }
+      &:focus {
+        background: none;
+        border: 1px solid transparent;
+      }
+    }
+    select[disabled] {
+      @extend %extend_2;
+    }
+  }
+  .buttonWidgetAnnotation {
+    &.checkBox {
+      input {
+        @extend %extend_1;
+        appearance: none;
+        &:hover {
+          border: 1px solid $black;
+        }
+      }
+      input[disabled] {
+        @extend %extend_2;
+      }
+    }
+    &.radioButton {
+      input {
+        @extend %extend_1;
+        appearance: none;
+        &:hover {
+          border: 1px solid $black;
+        }
+      }
+      input[disabled] {
+        @extend %extend_2;
+      }
+    }
+  }
+  .popupWrapper {
+    position: absolute;
+    width: 20em;
+  }
+  .popup {
+    position: absolute;
+    z-index: 200;
+    max-width: 20em;
+    background-color: $pale_canary;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 2px 5px $color_mine_shaft_approx;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 2px;
+    padding: 0.6em;
+    margin-left: 5px;
+    cursor: pointer;
+    word-wrap: break-word;
+    h1 {
+      font-size: 1em;
+      border-bottom: 1px solid $black;
+      padding-bottom: 0.2em;
+    }
+    p {
+      padding-top: 0.2em;
+    }
+  }
+  .highlightAnnotation {
+    cursor: pointer;
+  }
+  .underlineAnnotation {
+    cursor: pointer;
+  }
+  .squigglyAnnotation {
+    cursor: pointer;
+  }
+  .strikeoutAnnotation {
+    cursor: pointer;
+  }
+  .fileAttachmentAnnotation {
+    cursor: pointer;
+  }
+  .linkAnnotation > a {
+    position: absolute;
+    font-size: 1em;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url($data_uri_0) 0 0 repeat;
+    &:hover {
+      opacity: 0.2;
+      background: $yellow;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 2px 10px $yellow;
+    }
+  }
+  .textAnnotation img {
+    position: absolute;
+    cursor: pointer;
+  }
+  .lineAnnotation svg line {
+    cursor: pointer;
+  }
+}
+.pdfViewer {
+  .canvasWrapper {
+    overflow: hidden;
+  }
+  .page {
+    direction: ltr;
+    width: 816px;
+    height: 1056px;
+    margin: 1px auto -8px auto;
+    position: relative;
+    overflow: visible;
+    border: 9px solid transparent;
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: content-box;
+    //Instead of the line below you could use @include border-image($value)
+    border-image: $url_0 9 9 repeat;
+    background-color: $white;
+    canvas {
+      margin: 0;
+      display: block;
+    }
+    canvas[hidden] {
+      display: none;
+    }
+    .loadingIcon {
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: $url_1 center no-repeat;
+    }
+  }
+  &.singlePageView {
+    display: inline-block;
+    .page {
+      margin: 0;
+      border: none;
+    }
+  }
+  &.removePageBorders .page {
+    margin: 0 auto 10px auto;
+    border: none;
+  }
+}
+.pdfPresentationMode {
+  &:-webkit-full-screen {
+    .pdfViewer .page {
+      margin-bottom: 100%;
+      border: 0;
+    }
+    a:not(.internalLink) {
+      display: none;
+    }
+    .textLayer > div {
+      cursor: none;
+    }
+  }
+  &:-moz-full-screen {
+    .pdfViewer .page {
+      margin-bottom: 100%;
+      border: 0;
+    }
+    a:not(.internalLink) {
+      display: none;
+    }
+    .textLayer > div {
+      cursor: none;
+    }
+  }
+  &:-ms-fullscreen {
+    .pdfViewer .page {
+      margin-bottom: 100% !important;
+      border: 0;
+    }
+    a:not(.internalLink) {
+      display: none !important;
+    }
+    .textLayer > div {
+      cursor: none;
+    }
+  }
+  &:fullscreen {
+    .pdfViewer .page {
+      margin-bottom: 100%;
+      border: 0;
+    }
+    a:not(.internalLink) {
+      display: none;
+    }
+    .textLayer > div {
+      cursor: none;
+    }
+  }
+  &.pdfPresentationModeControls {
+    > * {
+      cursor: default;
+    }
+    .textLayer > div {
+      cursor: default;
+    }
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 10px;
+}
+body {
+  height: 100%;
+  width: 100%;
+  background-color: $color_cape_cod_approx;
+  background-image: $url_2;
+  font: message-box;
+  outline: none;
+}
+input {
+  font: message-box;
+  outline: none;
+}
+button {
+  font: message-box;
+  outline: none;
+}
+select {
+  font: message-box;
+  outline: none;
+}
+.hidden {
+  display: none !important;
+}
+[hidden] {
+  display: none !important;
+}
+#viewerContainer {
+  overflow: auto;
+  position: absolute;
+  top: 32px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  outline: none;
+  &.pdfPresentationMode {
+    &:-webkit-full-screen {
+      top: 0;
+      border-top: 2px solid transparent;
+      background-color: $black;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      cursor: none;
+    }
+    &:-moz-full-screen {
+      top: 0;
+      border-top: 2px solid transparent;
+      background-color: $black;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      cursor: none;
+    }
+    &:-ms-fullscreen {
+      top: 0 !important;
+      border-top: 2px solid transparent;
+      width: 100%;
+      height: 100%;
+      overflow: hidden !important;
+      cursor: none;
+    }
+    &:-ms-fullscreen::-ms-backdrop {
+      background-color: $black;
+    }
+    &:fullscreen {
+      top: 0;
+      border-top: 2px solid transparent;
+      background-color: $black;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      cursor: none;
+    }
+  }
+}
+#outerContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  &.sidebarMoving > #sidebarContainer {
+    visibility: visible;
+  }
+  &.sidebarOpen > #sidebarContainer {
+    visibility: visible;
+  }
+}
+#sidebarContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  visibility: hidden;
+  //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+  transition-duration: 200ms;
+  //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+  transition-timing-function: ease;
+}
+html[dir='ltr'] {
+  #sidebarContainer {
+    //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+    transition-property: left;
+    left: -200px;
+  }
+  #sidebarContent {
+    left: 0;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset -1px 0 0 $black_25;
+  }
+  #viewerContainer {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset 1px 0 0 $white_5;
+  }
+  #toolbarSidebar {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset -1px 0 0 $black_25, inset 0 -1px 0 $white_5, 0 1px 0 $black_15, 0 0 1px $black_10;
+  }
+  #toolbarContainer {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset 1px 0 0 $white_8, inset 0 1px 1px $black_15, inset 0 -1px 0 $white_5, 0 1px 0 $black_15, 0 1px 1px $black_10;
+  }
+  .findbar {
+    left: 68px;
+    * {
+      position: relative;
+      float: left;
+    }
+  }
+  .secondaryToolbar {
+    right: 4px;
+  }
+  .doorHanger {
+    &:after {
+      left: 13px;
+      margin-left: -8px;
+    }
+    &:before {
+      left: 13px;
+      margin-left: -9px;
+    }
+  }
+  .doorHangerRight {
+    &:after {
+      right: 13px;
+      margin-right: -8px;
+    }
+    &:before {
+      right: 13px;
+      margin-right: -9px;
+    }
+  }
+  #toolbarViewerLeft {
+    float: left;
+    > * {
+      position: relative;
+      float: left;
+    }
+  }
+  #toolbarViewerRight {
+    float: right;
+    > * {
+      position: relative;
+      float: left;
+    }
+  }
+  .splitToolbarButton {
+    margin: 3px 2px 4px 0;
+    display: inline-block;
+    &:first-child {
+      margin-left: 4px;
+    }
+    &:last-child {
+      margin-right: 4px;
+    }
+    > .toolbarButton {
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 0;
+      float: left;
+      &:first-child {
+        position: relative;
+        margin: 0;
+        margin-right: -1px;
+        //Instead of the line below you could use @include border-top-left-radius($radius)
+        border-top-left-radius: 2px;
+        //Instead of the line below you could use @include border-bottom-left-radius($radius)
+        border-bottom-left-radius: 2px;
+        border-right-color: transparent;
+      }
+      &:last-child {
+        position: relative;
+        margin: 0;
+        margin-left: -1px;
+        //Instead of the line below you could use @include border-top-right-radius($radius)
+        border-top-right-radius: 2px;
+        //Instead of the line below you could use @include border-bottom-right-radius($radius)
+        border-bottom-right-radius: 2px;
+        border-left-color: transparent;
+      }
+    }
+  }
+  .splitToolbarButtonSeparator {
+    float: left;
+  }
+  .toolbarButton {
+    margin: 3px 2px 4px 0;
+    &:first-child {
+      margin-left: 4px;
+    }
+    &:last-child {
+      margin-right: 4px;
+    }
+    &#sidebarToggle::before {
+      content: $url_5;
+    }
+    &#secondaryToolbarToggle::before {
+      content: $url_7;
+    }
+    &.findPrevious::before {
+      content: $url_9;
+    }
+    &.findNext::before {
+      content: $url_11;
+    }
+    &.pageUp::before {
+      content: $url_13;
+    }
+    &.pageDown::before {
+      content: $url_15;
+    }
+    &.pdfSidebarNotification::after {
+      left: 17px;
+    }
+  }
+  .overlayButton {
+    margin: 3px 2px 4px 0;
+  }
+  .dropdownToolbarButton {
+    margin: 3px 2px 4px 0;
+    background-position: 95%;
+  }
+  #findPrevious {
+    margin-left: 3px;
+  }
+  #findNext {
+    margin-right: 3px;
+  }
+  .verticalToolbarSeparator {
+    margin-left: 2px;
+  }
+  .outlineItem {
+    > a {
+      padding: 2px 0 5px 4px;
+    }
+    > .outlineItems {
+      margin-left: 20px;
+    }
+  }
+  .outlineItemToggler {
+    float: left;
+    &.outlineItemsHidden::before {
+      content: $url_37;
+    }
+  }
+  .outlineItemToggler::before {
+    right: 4px;
+  }
+  #outerContainer.sidebarOpen > {
+    #sidebarContainer {
+      left: 0;
+    }
+    #mainContainer {
+      //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+      transition-property: left;
+      left: 200px;
+    }
+  }
+  #toolbarViewerMiddle > * {
+    position: relative;
+    float: left;
+  }
+  .outlineWithDeepNesting > .outlineItem {
+    margin-left: 20px;
+  }
+  .attachmentsItem > button {
+    padding: 2px 0 3px 7px;
+    text-align: left;
+  }
+  #documentPropertiesOverlay .row > * {
+    text-align: left;
+  }
+}
+html[dir='rtl'] {
+  #sidebarContainer {
+    //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+    transition-property: right;
+    right: -200px;
+  }
+  #sidebarContent {
+    right: 0;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset 1px 0 0 $black_25;
+  }
+  #viewerContainer {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset -1px 0 0 $white_5;
+  }
+  #toolbarSidebar {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset 1px 0 0 $black_25, inset 0 1px 0 $white_5, 0 1px 0 $black_15, 0 0 1px $black_10;
+  }
+  #toolbarContainer {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset -1px 0 0 $white_8, inset 0 1px 1px $black_15, inset 0 -1px 0 $white_5, 0 1px 0 $black_15, 0 1px 1px $black_10;
+  }
+  .findbar {
+    right: 68px;
+    * {
+      position: relative;
+      float: right;
+    }
+  }
+  #findInput[data-status="pending"] {
+    background-position: left;
+  }
+  .secondaryToolbar {
+    left: 4px;
+  }
+  .doorHangerRight {
+    &:after {
+      left: 13px;
+      margin-left: -8px;
+    }
+    &:before {
+      left: 13px;
+      margin-left: -9px;
+    }
+  }
+  .doorHanger {
+    &:after {
+      right: 13px;
+      margin-right: -8px;
+    }
+    &:before {
+      right: 13px;
+      margin-right: -9px;
+    }
+  }
+  #toolbarViewerRight {
+    float: left;
+    > * {
+      position: relative;
+      float: right;
+    }
+  }
+  #toolbarViewerLeft {
+    float: right;
+    > * {
+      position: relative;
+      float: right;
+    }
+  }
+  .splitToolbarButton {
+    margin: 3px 0 4px 2px;
+    display: inline-block;
+    &:last-child {
+      margin-left: 4px;
+    }
+    &:first-child {
+      margin-right: 4px;
+    }
+    > .toolbarButton {
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 0;
+      float: right;
+      &:last-child {
+        position: relative;
+        margin: 0;
+        margin-right: -1px;
+        //Instead of the line below you could use @include border-top-left-radius($radius)
+        border-top-left-radius: 2px;
+        //Instead of the line below you could use @include border-bottom-left-radius($radius)
+        border-bottom-left-radius: 2px;
+        border-right-color: transparent;
+      }
+      &:first-child {
+        position: relative;
+        margin: 0;
+        margin-left: -1px;
+        //Instead of the line below you could use @include border-top-right-radius($radius)
+        border-top-right-radius: 2px;
+        //Instead of the line below you could use @include border-bottom-right-radius($radius)
+        border-bottom-right-radius: 2px;
+        border-left-color: transparent;
+      }
+    }
+  }
+  .splitToolbarButtonSeparator {
+    float: right;
+  }
+  .toolbarButton {
+    margin: 3px 0 4px 2px;
+    &:last-child {
+      margin-left: 4px;
+    }
+    &:first-child {
+      margin-right: 4px;
+    }
+    &#sidebarToggle::before {
+      content: $url_6;
+    }
+    &#secondaryToolbarToggle::before {
+      content: $url_8;
+    }
+    &.findPrevious::before {
+      content: $url_10;
+    }
+    &.findNext::before {
+      content: $url_12;
+    }
+    &.pageUp::before {
+      content: $url_14;
+    }
+    &.pageDown::before {
+      content: $url_16;
+    }
+    &.pdfSidebarNotification::after {
+      right: 17px;
+    }
+  }
+  .overlayButton {
+    margin: 3px 0 4px 2px;
+  }
+  .dropdownToolbarButton {
+    margin: 3px 0 4px 2px;
+    background-position: 5%;
+  }
+  #findPrevious {
+    margin-right: 3px;
+  }
+  #findNext {
+    margin-left: 3px;
+  }
+  .verticalToolbarSeparator {
+    margin-right: 2px;
+  }
+  .outlineItem {
+    > a {
+      padding: 2px 4px 5px 0;
+    }
+    > .outlineItems {
+      margin-right: 20px;
+    }
+  }
+  .outlineItemToggler {
+    float: right;
+    &.outlineItemsHidden::before {
+      content: $url_38;
+    }
+  }
+  .outlineItemToggler::before {
+    left: 4px;
+  }
+  #outerContainer.sidebarOpen > {
+    #sidebarContainer {
+      right: 0;
+    }
+    #mainContainer {
+      //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+      transition-property: right;
+      right: 200px;
+    }
+  }
+  #toolbarViewerMiddle > * {
+    position: relative;
+    float: right;
+  }
+  .outlineWithDeepNesting > .outlineItem {
+    margin-right: 20px;
+  }
+  .attachmentsItem > button {
+    padding: 2px 7px 3px 0;
+    text-align: right;
+  }
+  #documentPropertiesOverlay .row > * {
+    text-align: right;
+  }
+}
+#mainContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-width: 320px;
+  //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+  transition-duration: 200ms;
+  //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+  transition-timing-function: ease;
+}
+#sidebarContent {
+  top: 32px;
+  bottom: 0;
+  overflow: auto;
+  position: absolute;
+  width: 200px;
+  background-color: $black_10;
+}
+.toolbar {
+  position: relative;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  cursor: default;
+}
+#toolbarContainer {
+  width: 100%;
+  @extend %extend_3;
+}
+#toolbarSidebar {
+  width: 200px;
+  height: 32px;
+  background-color: $color_cape_cod_approx;
+  background-image: $url_2, linear-gradient($color_gravel_99_approx, $color_cape_cod_95_approx);
+}
+.findbar {
+  @extend %extend_3;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: inset 1px 0 0 $white_8, inset 0 1px 1px $black_15, inset 0 -1px 0 $white_5, 0 1px 0 $black_15, 0 1px 1px $black_10;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: inset -1px 0 0 $white_8, inset 0 1px 1px $black_15, inset 0 -1px 0 $white_5, 0 1px 0 $black_15, 0 1px 1px $black_10;
+  top: 32px;
+  position: absolute;
+  z-index: 10000;
+  height: auto;
+  min-width: 16px;
+  padding: 0 6px;
+  margin: 4px 2px;
+  color: $color_iron_approx;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: left;
+  cursor: default;
+  min-width: 300px;
+  > div {
+    height: 32px;
+  }
+  label {
+  }
+  &.wrapContainers > div {
+    clear: both;
+    &#findbarMessageContainer {
+      height: auto;
+    }
+  }
+}
+.secondaryToolbar {
+  @extend %extend_3;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: inset 1px 0 0 $white_8, inset 0 1px 1px $black_15, inset 0 -1px 0 $white_5, 0 1px 0 $black_15, 0 1px 1px $black_10;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: inset -1px 0 0 $white_8, inset 0 1px 1px $black_15, inset 0 -1px 0 $white_5, 0 1px 0 $black_15, 0 1px 1px $black_10;
+  top: 32px;
+  position: absolute;
+  z-index: 10000;
+  height: auto;
+  min-width: 16px;
+  padding: 0 6px;
+  margin: 4px 2px;
+  color: $color_iron_approx;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: left;
+  cursor: default;
+  padding: 6px;
+  height: auto;
+  z-index: 30000;
+}
+#toolbarViewer {
+  height: 32px;
+}
+#loadingBar {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background-color: $color_mine_shaft_approx;
+  border-bottom: 1px solid $color_mine_shaft_approx;
+  .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: $color_alto_approx;
+    overflow: hidden;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: width 200ms;
+    &.indeterminate {
+      background-color: $color_mountain_mist_approx;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: none;
+      .glimmer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: calc(100% +150px);
+        background: repeating-linear-gradient(135deg, $color_pink_swan_approx 0, $color_mountain_mist_approx 5px, $color_mountain_mist_approx 45px, $color_alto_approx 55px, $color_alto_approx 95px, $color_pink_swan_approx 100px);
+        animation: progressIndeterminate 950ms linear infinite;
+      }
+    }
+  }
+}
+@-webkit-keyframes progressIndeterminate {
+  0% {
+    left: -142px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes progressIndeterminate {
+  0% {
+    left: -142px;
+  }
+  100% {
+    left: 0;
+  }
+}
+#findInput {
+  width: 200px;
+  &:-ms-input-placeholder {
+    font-style: italic;
+  }
+  &.notFound {
+    background-color: $color_bittersweet_approx;
+  }
+}
+#findInput::-webkit-input-placeholder {
+  font-style: italic;
+}
+#findInput::-moz-placeholder {
+  font-style: italic;
+}
+#findInput::placeholder {
+  font-style: italic;
+}
+#findInput[data-status="pending"] {
+  background-image: $url_3;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+#secondaryToolbarButtonContainer {
+  max-width: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: -4px;
+}
+.doorHanger {
+  border: 1px solid $black_50;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 1px 4px $black_30;
+  &:after {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: $color_fuscous_gray_99_approx;
+    border-width: 8px;
+  }
+  &:before {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: $black_50;
+    border-width: 9px;
+  }
+}
+.doorHangerRight {
+  border: 1px solid $black_50;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 1px 4px $black_30;
+  &:after {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: $color_fuscous_gray_99_approx;
+    border-width: 8px;
+  }
+  &:before {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: $black_50;
+    border-width: 9px;
+  }
+}
+#findResultsCount {
+  background-color: $color_iron_approx;
+  color: $color_fuscous_gray_approx;
+  text-align: center;
+  padding: 3px 4px;
+}
+#findMsg {
+  font-style: italic;
+  color: $color_casper_approx;
+  &:empty {
+    display: none;
+  }
+}
+#toolbarViewerMiddle {
+  position: absolute;
+  left: 50%;
+  //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+  transform: translateX(-50%);
+}
+.toolbarButton {
+  border: 0 none;
+  background: none;
+  width: 32px;
+  height: 25px;
+  min-width: 16px;
+  padding: 2px 6px 0;
+  border: 1px solid transparent;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  color: $white_80;
+  font-size: 12px;
+  line-height: 14px;
+  cursor: default;
+  //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+  transition-property: background-color, border-color, box-shadow;
+  //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+  transition-duration: 150ms;
+  //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+  transition-timing-function: ease;
+  > span {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  &.textButton {
+    background-color: $black_12;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: padding-box;
+    border: 1px solid $black_35;
+    border-color: $black_32 $black_38 $black_42;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 1px 0 $white_5;
+    //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+    transition-property: background-color, border-color, box-shadow;
+    //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+    transition-duration: 150ms;
+    //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+    transition-timing-function: ease;
+    &:hover {
+      background-color: $black_20;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 0 1px $black_5;
+      z-index: 199;
+    }
+    &:focus {
+      background-color: $black_20;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 0 1px $black_5;
+      z-index: 199;
+    }
+  }
+  &:hover {
+    background-color: $black_12;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: padding-box;
+    border: 1px solid $black_35;
+    border-color: $black_32 $black_38 $black_42;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 1px 0 $white_5;
+    &:active {
+      background-color: $black_20;
+      background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+      border-color: $black_35 $black_40 $black_45;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 1px $black_10 inset, 0 0 1px $black_20 inset, 0 1px 0 $white_5;
+      //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+      transition-property: background-color, border-color, box-shadow;
+      //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+      transition-duration: 10ms;
+      //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+      transition-timing-function: linear;
+    }
+  }
+  &:focus {
+    background-color: $black_12;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: padding-box;
+    border: 1px solid $black_35;
+    border-color: $black_32 $black_38 $black_42;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 1px 0 $white_5;
+  }
+  &.toggled {
+    background-color: $black_30;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    border-color: $black_40 $black_45 $black_50;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 1px $black_10 inset, 0 0 1px $black_20 inset, 0 1px 0 $white_5;
+    //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+    transition-property: background-color, border-color, box-shadow;
+    //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+    transition-duration: 10ms;
+    //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+    transition-timing-function: linear;
+    &:hover:active {
+      background-color: $black_40;
+      border-color: $black_40 $black_50 $black_55;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 1px $black_20 inset, 0 0 1px $black_30 inset, 0 1px 0 $white_5;
+    }
+  }
+  &.zoomOut::before {
+    content: $url_17;
+  }
+  &.zoomIn::before {
+    content: $url_18;
+  }
+  &.presentationMode::before {
+    content: $url_19;
+  }
+  &.print::before {
+    content: $url_20;
+  }
+  &.openFile::before {
+    content: $url_21;
+  }
+  &.download::before {
+    content: $url_22;
+  }
+  &.bookmark {
+    //Instead of the line below you could use @include box-sizing($bs)
+    box-sizing: border-box;
+    outline: none;
+    padding-top: 4px;
+    text-decoration: none;
+  }
+  &.bookmark::before {
+    content: $url_23;
+  }
+  &.pdfSidebarNotification::after {
+    position: absolute;
+    display: inline-block;
+    top: 1px;
+    content: '';
+    background-color: $color_mantis_approx;
+    height: 9px;
+    width: 9px;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+  }
+}
+.secondaryToolbarButton {
+  border: 0 none;
+  background: none;
+  width: 32px;
+  height: 25px;
+  min-width: 16px;
+  padding: 2px 6px 0;
+  border: 1px solid transparent;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  color: $white_80;
+  font-size: 12px;
+  line-height: 14px;
+  cursor: default;
+  //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+  transition-property: background-color, border-color, box-shadow;
+  //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+  transition-duration: 150ms;
+  //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+  transition-timing-function: ease;
+  position: relative;
+  margin: 0 0 4px 0;
+  padding: 3px 0 1px;
+  height: auto;
+  min-height: 25px;
+  width: auto;
+  min-width: 100%;
+  white-space: normal;
+  &:hover {
+    background-color: $black_12;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: padding-box;
+    border: 1px solid $black_35;
+    border-color: $black_32 $black_38 $black_42;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 1px 0 $white_5;
+    &:active {
+      background-color: $black_20;
+      background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+      border-color: $black_35 $black_40 $black_45;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 1px $black_10 inset, 0 0 1px $black_20 inset, 0 1px 0 $white_5;
+      //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+      transition-property: background-color, border-color, box-shadow;
+      //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+      transition-duration: 10ms;
+      //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+      transition-timing-function: linear;
+    }
+  }
+  &:focus {
+    background-color: $black_12;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: padding-box;
+    border: 1px solid $black_35;
+    border-color: $black_32 $black_38 $black_42;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 1px 0 $white_5;
+  }
+  &.toggled {
+    background-color: $black_30;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    border-color: $black_40 $black_45 $black_50;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 1px $black_10 inset, 0 0 1px $black_20 inset, 0 1px 0 $white_5;
+    //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+    transition-property: background-color, border-color, box-shadow;
+    //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+    transition-duration: 10ms;
+    //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+    transition-timing-function: linear;
+    &:hover:active {
+      background-color: $black_40;
+      border-color: $black_40 $black_50 $black_55;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 1px $black_20 inset, 0 0 1px $black_30 inset, 0 1px 0 $white_5;
+    }
+  }
+  &.presentationMode::before {
+    content: $url_19;
+  }
+  &.print::before {
+    content: $url_20;
+  }
+  &.openFile::before {
+    content: $url_21;
+  }
+  &.download::before {
+    content: $url_22;
+  }
+  &.bookmark {
+    //Instead of the line below you could use @include box-sizing($bs)
+    box-sizing: border-box;
+    outline: none;
+    padding-top: 4px;
+    text-decoration: none;
+    padding-top: 5px;
+  }
+  &.bookmark::before {
+    content: $url_23;
+  }
+  &.firstPage::before {
+    content: $url_29;
+  }
+  &.lastPage::before {
+    content: $url_30;
+  }
+  &.rotateCcw::before {
+    content: $url_31;
+  }
+  &.rotateCw::before {
+    content: $url_32;
+  }
+  &.selectTool::before {
+    content: $url_33;
+  }
+  &.handTool::before {
+    content: $url_34;
+  }
+  &.documentProperties::before {
+    content: $url_35;
+  }
+}
+.overlayButton {
+  border: 0 none;
+  background: none;
+  width: 32px;
+  height: 25px;
+  min-width: 16px;
+  padding: 2px 6px 0;
+  border: 1px solid transparent;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  color: $white_80;
+  font-size: 12px;
+  line-height: 14px;
+  cursor: default;
+  //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+  transition-property: background-color, border-color, box-shadow;
+  //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+  transition-duration: 150ms;
+  //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+  transition-timing-function: ease;
+  background-color: $black_12;
+  background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+  //Instead of the line below you could use @include background-clip($clip)
+  background-clip: padding-box;
+  border: 1px solid $black_35;
+  border-color: $black_32 $black_38 $black_42;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 1px 0 $white_5;
+  width: auto;
+  margin: 3px 4px 2px 4px !important;
+  padding: 2px 6px 3px;
+  &:hover {
+    background-color: $black_20;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 0 1px $black_5;
+    z-index: 199;
+    &:active {
+      background-color: $black_20;
+      background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+      border-color: $black_35 $black_40 $black_45;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 1px $black_10 inset, 0 0 1px $black_20 inset, 0 1px 0 $white_5;
+      //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+      transition-property: background-color, border-color, box-shadow;
+      //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+      transition-duration: 10ms;
+      //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+      transition-timing-function: linear;
+    }
+  }
+  &:focus {
+    background-color: $black_20;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 0 1px $black_5;
+    z-index: 199;
+  }
+}
+.toolbarButton[disabled] {
+  opacity: .5;
+}
+.secondaryToolbarButton[disabled] {
+  opacity: .5;
+}
+.overlayButton[disabled] {
+  opacity: .5;
+}
+.splitToolbarButton {
+  &.toggled {
+    .toolbarButton {
+      margin: 0;
+    }
+    > {
+      .toolbarButton {
+        background-color: $black_12;
+        background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+        //Instead of the line below you could use @include background-clip($clip)
+        background-clip: padding-box;
+        border: 1px solid $black_35;
+        border-color: $black_32 $black_38 $black_42;
+        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 1px 0 $white_5;
+        //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+        transition-property: background-color, border-color, box-shadow;
+        //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+        transition-duration: 150ms;
+        //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+        transition-timing-function: ease;
+        &.toggled {
+          background-color: $black_30;
+          background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+          border-color: $black_40 $black_45 $black_50;
+          //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+          box-shadow: 0 1px 1px $black_10 inset, 0 0 1px $black_20 inset, 0 1px 0 $white_5;
+          //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+          transition-property: background-color, border-color, box-shadow;
+          //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+          transition-duration: 10ms;
+          //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+          transition-timing-function: linear;
+          &:hover:active {
+            background-color: $black_40;
+            border-color: $black_40 $black_50 $black_55;
+            //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+            box-shadow: 0 1px 1px $black_20 inset, 0 0 1px $black_30 inset, 0 1px 0 $white_5;
+          }
+        }
+      }
+      .splitToolbarButtonSeparator {
+        padding: 12px 0;
+        margin: 1px 0;
+        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: 0 0 0 1px $white_3;
+        //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+        transition-property: padding;
+        //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+        transition-duration: 10ms;
+        //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+        transition-timing-function: ease;
+      }
+    }
+  }
+  &:hover > {
+    .toolbarButton {
+      background-color: $black_12;
+      background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+      //Instead of the line below you could use @include background-clip($clip)
+      background-clip: padding-box;
+      border: 1px solid $black_35;
+      border-color: $black_32 $black_38 $black_42;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 1px 0 $white_5;
+      //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+      transition-property: background-color, border-color, box-shadow;
+      //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+      transition-duration: 150ms;
+      //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+      transition-timing-function: ease;
+    }
+    .splitToolbarButtonSeparator {
+      padding: 12px 0;
+      margin: 1px 0;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 1px $white_3;
+      //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+      transition-property: padding;
+      //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+      transition-duration: 10ms;
+      //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+      transition-timing-function: ease;
+    }
+  }
+  &:focus > .toolbarButton {
+    background-color: $black_12;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: padding-box;
+    border: 1px solid $black_35;
+    border-color: $black_32 $black_38 $black_42;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 1px 0 $white_5;
+    //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+    transition-property: background-color, border-color, box-shadow;
+    //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+    transition-duration: 150ms;
+    //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+    transition-timing-function: ease;
+  }
+  > .toolbarButton {
+    position: relative;
+    &:hover {
+      background-color: $black_20;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 0 1px $black_5;
+      z-index: 199;
+    }
+    &:focus {
+      background-color: $black_20;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 0 1px $black_5;
+      z-index: 199;
+    }
+  }
+}
+.dropdownToolbarButton {
+  min-width: 16px;
+  padding: 2px 6px 0;
+  border: 1px solid transparent;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  color: $white_80;
+  font-size: 12px;
+  line-height: 14px;
+  cursor: default;
+  //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+  transition-property: background-color, border-color, box-shadow;
+  //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+  transition-duration: 150ms;
+  //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+  transition-timing-function: ease;
+  background-color: $black_12;
+  background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+  //Instead of the line below you could use @include background-clip($clip)
+  background-clip: padding-box;
+  border: 1px solid $black_35;
+  border-color: $black_32 $black_38 $black_42;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 1px 0 $white_5;
+  width: 120px;
+  max-width: 120px;
+  padding: 0;
+  overflow: hidden;
+  background: $url_4 no-repeat;
+  &:hover {
+    background-color: $black_20;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_15 inset, 0 0 1px $black_5;
+    z-index: 199;
+    &:active {
+      background-color: $black_20;
+      background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+      border-color: $black_35 $black_40 $black_45;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 1px $black_10 inset, 0 0 1px $black_20 inset, 0 1px 0 $white_5;
+      //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+      transition-property: background-color, border-color, box-shadow;
+      //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+      transition-duration: 10ms;
+      //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+      transition-timing-function: linear;
+    }
+  }
+  > select {
+    min-width: 140px;
+    font-size: 12px;
+    color: $concrete;
+    margin: 0;
+    padding: 3px 2px 2px;
+    border: none;
+    background: rgba(0,0,0,0);
+    > option {
+      background: $color_masala_approx;
+    }
+  }
+}
+.splitToolbarButtonSeparator {
+  padding: 8px 0;
+  width: 1px;
+  background-color: $black_50;
+  z-index: 99;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 0 0 1px $white_8;
+  display: inline-block;
+  margin: 5px 0;
+}
+#customScaleOption {
+  display: none;
+}
+#pageWidthOption {
+  border-bottom: 1px $white_50 solid;
+}
+.toolbarButtonSpacer {
+  width: 30px;
+  display: inline-block;
+  height: 1px;
+}
+.toolbarButton::before {
+  position: absolute;
+  display: inline-block;
+  top: 4px;
+  left: 7px;
+}
+.secondaryToolbarButton::before {
+  position: absolute;
+  display: inline-block;
+  top: 4px;
+  left: 7px;
+}
+html[dir="ltr"] {
+  .secondaryToolbarButton::before {
+    left: 4px;
+  }
+  .secondaryToolbarButton {
+    padding-left: 24px;
+    text-align: left;
+    &.bookmark {
+      padding-left: 27px;
+    }
+    > span {
+      padding-right: 4px;
+    }
+  }
+  #viewOutline.toolbarButton::before {
+    content: $url_25;
+  }
+}
+html[dir="rtl"] {
+  .secondaryToolbarButton::before {
+    right: 4px;
+  }
+  .secondaryToolbarButton {
+    padding-right: 24px;
+    text-align: right;
+    &.bookmark {
+      padding-right: 27px;
+    }
+    > span {
+      padding-left: 4px;
+    }
+  }
+  #viewOutline.toolbarButton::before {
+    content: $url_26;
+  }
+}
+.bookmark[href=' &#'] {
+  opacity: .5;
+  pointer-events: none;
+}
+.verticalToolbarSeparator {
+  display: block;
+  padding: 8px 0;
+  margin: 8px 4px;
+  width: 1px;
+  background-color: $black_50;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 0 0 1px $white_8;
+}
+.horizontalToolbarSeparator {
+  display: block;
+  margin: 0 0 4px 0;
+  height: 1px;
+  width: 100%;
+  background-color: $black_50;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 0 0 1px $white_8;
+}
+.toolbarField {
+  padding: 3px 6px;
+  margin: 4px 0;
+  border: 1px solid transparent;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  background-color: $white_9;
+  background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+  //Instead of the line below you could use @include background-clip($clip)
+  background-clip: padding-box;
+  border: 1px solid $black_35;
+  border-color: $black_32 $black_38 $black_42;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 1px 0 $black_5 inset, 0 1px 0 $white_5;
+  color: $concrete;
+  font-size: 12px;
+  line-height: 14px;
+  outline-style: none;
+  //Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+  transition-property: background-color, border-color, box-shadow;
+  //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+  transition-duration: 150ms;
+  //Instead of the line below you could use @include transition-timing-function($function-1, $function-2, $function-3, $function-4, $function-5, $function-6, $function-7, $function-8, $function-9, $function-10)
+  transition-timing-function: ease;
+  &.pageNumber {
+    min-width: 16px;
+    text-align: right;
+    width: 40px;
+    &.visiblePageIsLoading {
+      background-image: $url_3;
+      background-repeat: no-repeat;
+      background-position: 1px;
+    }
+  }
+  &.pageNumber::-webkit-inner-spin-button {
+    margin: 0;
+  }
+  &.pageNumber::-webkit-outer-spin-button {
+    margin: 0;
+  }
+  &:hover {
+    background-color: $white_11;
+    border-color: $black_40 $black_43 $black_45;
+  }
+  &:focus {
+    background-color: $white_15;
+    border-color: $color_picton_blue_80_approx $color_picton_blue_85_approx $color_picton_blue_90_approx;
+  }
+}
+.toolbarField[type=checkbox] {
+  display: inline-block;
+  margin: 8px 0;
+}
+.toolbarLabel {
+  min-width: 16px;
+  padding: 3px 6px 3px 2px;
+  margin: 4px 2px 4px 0;
+  border: 1px solid transparent;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  color: $color_iron_approx;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: left;
+  cursor: default;
+}
+#thumbnailView {
+  position: absolute;
+  width: 120px;
+  top: 0;
+  bottom: 0;
+  padding: 10px 40px 0;
+  overflow: auto;
+  > a:last-of-type > .thumbnail {
+    margin-bottom: 10px;
+    &:not([data-loaded]) {
+      margin-bottom: 9px;
+    }
+  }
+}
+.thumbnail {
+  float: left;
+  margin-bottom: 5px;
+  &:not([data-loaded]) {
+    border: 1px dashed $white_50;
+    margin: -1px -1px 4px -1px;
+  }
+  &:hover > .thumbnailSelectionRing {
+    background-color: $white_15;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: padding-box;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_20 inset, 0 0 1px $black_20;
+    color: $white_90;
+    > .thumbnailImage {
+      opacity: .9;
+    }
+  }
+  &.selected > .thumbnailSelectionRing {
+    background-color: $white_30;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: padding-box;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_10 inset, 0 0 1px $black_20;
+    color: $white_100;
+    > .thumbnailImage {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 1px $black_50;
+      opacity: 1;
+    }
+  }
+}
+.thumbnailImage {
+  border: 1px solid transparent;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 0 0 1px $black_50, 0 2px 8px $black_30;
+  opacity: 0.8;
+  z-index: 99;
+  background-color: $white;
+  //Instead of the line below you could use @include background-clip($clip)
+  background-clip: content-box;
+}
+.thumbnailSelectionRing {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  padding: 7px;
+}
+#outlineView {
+  position: absolute;
+  width: 192px;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 4px 4px 0;
+}
+#attachmentsView {
+  position: absolute;
+  width: 192px;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 3px 4px 0;
+}
+.outlineItem {
+  > a {
+    text-decoration: none;
+    display: inline-block;
+    min-width: 95%;
+    min-width: calc(100% - 4px);
+    height: auto;
+    margin-bottom: 1px;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 2px;
+    color: $white_80;
+    font-size: 13px;
+    line-height: 15px;
+    white-space: normal;
+    &:hover {
+      background-color: $white_2;
+      background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+      //Instead of the line below you could use @include background-clip($clip)
+      background-clip: padding-box;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_20 inset, 0 0 1px $black_20;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 2px;
+      color: $white_90;
+    }
+  }
+  &.selected {
+    background-color: $white_8;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: padding-box;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_10 inset, 0 0 1px $black_20;
+    color: $white_100;
+  }
+}
+.outlineItemToggler {
+  position: relative;
+  height: 0;
+  width: 0;
+  color: $white_50;
+  &:hover {
+    background-color: $white_2;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: padding-box;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_20 inset, 0 0 1px $black_20;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 2px;
+    color: $white_90;
+    + a {
+      background-color: $white_2;
+      background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+      //Instead of the line below you could use @include background-clip($clip)
+      background-clip: padding-box;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_20 inset, 0 0 1px $black_20;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 2px;
+      color: $white_90;
+    }
+    ~ .outlineItems {
+      background-color: $white_2;
+      background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+      //Instead of the line below you could use @include background-clip($clip)
+      background-clip: padding-box;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_20 inset, 0 0 1px $black_20;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 2px;
+      color: $white_90;
+    }
+  }
+  &.outlineItemsHidden ~ .outlineItems {
+    display: none;
+  }
+}
+.outlineItemToggler::before {
+  content: $url_36;
+  display: inline-block;
+  position: absolute;
+}
+.noResults {
+  font-size: 12px;
+  color: $white_80;
+  font-style: italic;
+  cursor: default;
+}
+::selection {
+  background: $blue_30;
+}
+::-moz-selection {
+  background: $blue_30;
+}
+#errorWrapper {
+  background: none repeat scroll 0 0 $color_carnation_approx;
+  color: $white;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+  padding: 3px;
+  font-size: 0.8em;
+}
+#errorMessageLeft {
+  float: left;
+}
+#errorMessageRight {
+  float: right;
+}
+#errorMoreInfo {
+  background-color: $white;
+  color: $black;
+  padding: 3px;
+  margin: 3px;
+  width: 98%;
+}
+#overlayContainer {
+  display: table;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $black_20;
+  z-index: 40000;
+  > * {
+    overflow: auto;
+  }
+  > .container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    > .dialog {
+      display: inline-block;
+      padding: 15px;
+      border-spacing: 4px;
+      color: $color_iron_approx;
+      font-size: 12px;
+      line-height: 14px;
+      background-color: $color_gravel_approx;
+      background-image: $url_2, linear-gradient($color_fuscous_gray_99_approx, $color_tundora_95_approx);
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: inset 1px 0 0 $white_8, inset 0 1px 1px $black_15, inset 0 -1px 0 $white_5, 0 1px 0 $black_15, 0 1px 1px $black_10;
+      border: 1px solid $black_50;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 4px;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 1px 4px $black_30;
+    }
+  }
+}
+.dialog {
+  .toolbarField {
+    margin: 5px 0;
+  }
+  .separator {
+    display: block;
+    margin: 4px 0;
+    height: 1px;
+    width: 100%;
+    background-color: $black_50;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 1px $white_8;
+  }
+  .buttonRow {
+    text-align: center;
+    vertical-align: middle;
+  }
+  :link {
+    color: $white;
+  }
+  > .row {
+    display: table-row;
+    > * {
+      display: table-cell;
+    }
+  }
+}
+#passwordOverlay {
+  .toolbarField {
+    width: 200px;
+  }
+  > .dialog {
+    text-align: center;
+  }
+}
+#documentPropertiesOverlay {
+  .row {
+    > * {
+      min-width: 100px;
+    }
+    > span {
+      width: 125px;
+      word-wrap: break-word;
+    }
+    > p {
+      max-width: 225px;
+      word-wrap: break-word;
+    }
+  }
+  .buttonRow {
+    margin-top: 10px;
+  }
+  > .dialog {
+    text-align: left;
+  }
+}
+.clearBoth {
+  clear: both;
+}
+.fileInput {
+  background: $white;
+  color: $black;
+  margin-top: 5px;
+  visibility: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+#PDFBug {
+  background: none repeat scroll 0 0 $white;
+  border: 1px solid $color_storm_dust_approx;
+  position: fixed;
+  top: 32px;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  padding: 0;
+  width: 300px;
+  .controls {
+    background: $color_gallery_approx;
+    border-bottom: 1px solid $color_storm_dust_approx;
+    padding: 3px;
+  }
+  .panels {
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 27px;
+  }
+  .stats {
+    font-family: $font_1;
+    font-size: 10px;
+    white-space: pre;
+    .title {
+      font-weight: bold;
+    }
+  }
+  table {
+    font-size: 10px;
+  }
+  button.active {
+    font-weight: bold;
+  }
+}
+.debuggerShowText {
+  background: none repeat scroll 0 0 $yellow;
+  color: $blue;
+}
+#viewer {
+  &.textLayer-visible {
+    .textLayer {
+      opacity: 1.0;
+      > div {
+        background-color: $yellow_10;
+        color: $black;
+        border: solid 1px $red_50;
+        //Instead of the line below you could use @include box-sizing($bs)
+        box-sizing: border-box;
+      }
+    }
+    .canvasWrapper {
+      background-color: $color_mint_green_approx;
+      canvas {
+        mix-blend-mode: screen;
+      }
+    }
+  }
+  &.textLayer-hover .textLayer > div:hover {
+    background-color: $white;
+    color: $black;
+  }
+  &.textLayer-shadow .textLayer > div {
+    background-color: $white_60;
+    color: $black;
+  }
+}
+.grab-to-pan-grab {
+  cursor: $url_39, move !important;
+  cursor: grab !important;
+  &:active {
+    cursor: $url_40, move !important;
+    cursor: grabbing !important;
+    position: fixed;
+    background: transparent;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 50000;
+  }
+  *:not(input):not(textarea):not(button):not(select):not(:link) {
+    cursor: inherit !important;
+  }
+}
+.grab-to-pan-grabbing {
+  cursor: $url_40, move !important;
+  cursor: grabbing !important;
+  position: fixed;
+  background: transparent;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 50000;
+}
+@page {
+  margin: 0;
+}
+#printContainer {
+  display: none;
+}
+@media screen and(min-resolution: 2dppx) {
+  .toolbarButton::before {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(0.5);
+    top: -5px;
+  }
+  .secondaryToolbarButton::before {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(0.5);
+    top: -4px;
+  }
+  html[dir='ltr'] {
+    .toolbarButton::before {
+      left: -1px;
+    }
+    .secondaryToolbarButton::before {
+      left: -2px;
+    }
+    .toolbarButton {
+      &#sidebarToggle::before {
+        content: $url_43;
+      }
+      &#secondaryToolbarToggle::before {
+        content: $url_45;
+      }
+      &.findPrevious::before {
+        content: $url_47;
+      }
+      &.findNext::before {
+        content: $url_49;
+      }
+      &.pageUp::before {
+        content: $url_51;
+      }
+      &.pageDown::before {
+        content: $url_53;
+      }
+    }
+    .outlineItemToggler::before {
+      right: 0;
+    }
+    .outlineItemToggler.outlineItemsHidden::before {
+      content: $url_75;
+    }
+  }
+  html[dir='rtl'] {
+    .toolbarButton::before {
+      left: -1px;
+    }
+    .secondaryToolbarButton::before {
+      left: 186px;
+    }
+    .toolbarButton {
+      &#sidebarToggle::before {
+        content: $url_44;
+      }
+      &#secondaryToolbarToggle::before {
+        content: $url_46;
+      }
+      &.findPrevious::before {
+        content: $url_48;
+      }
+      &.findNext::before {
+        content: $url_50;
+      }
+      &.pageUp::before {
+        content: $url_52;
+      }
+      &.pageDown::before {
+        content: $url_54;
+      }
+    }
+    .outlineItemToggler::before {
+      left: 0;
+    }
+    .outlineItemToggler.outlineItemsHidden::before {
+      content: $url_76;
+    }
+  }
+  #findInput[data-status="pending"] {
+    background-image: $url_41;
+    background-size: 16px 17px;
+  }
+  .dropdownToolbarButton {
+    background: $url_42 no-repeat;
+    background-size: 7px 16px;
+  }
+  .toolbarButton {
+    &.zoomIn::before {
+      content: $url_55;
+    }
+    &.zoomOut::before {
+      content: $url_56;
+    }
+    &.presentationMode::before {
+      content: $url_57;
+    }
+    &.print::before {
+      content: $url_58;
+    }
+    &.openFile::before {
+      content: $url_59;
+    }
+    &.download::before {
+      content: $url_60;
+    }
+    &.bookmark::before {
+      content: $url_61;
+    }
+  }
+  .secondaryToolbarButton {
+    &.presentationMode::before {
+      content: $url_57;
+    }
+    &.print::before {
+      content: $url_58;
+    }
+    &.openFile::before {
+      content: $url_59;
+    }
+    &.download::before {
+      content: $url_60;
+    }
+    &.bookmark::before {
+      content: $url_61;
+    }
+    &.firstPage::before {
+      content: $url_67;
+    }
+    &.lastPage::before {
+      content: $url_68;
+    }
+    &.rotateCcw::before {
+      content: $url_69;
+    }
+    &.rotateCw::before {
+      content: $url_70;
+    }
+    &.selectTool::before {
+      content: $url_71;
+    }
+    &.handTool::before {
+      content: $url_72;
+    }
+    &.documentProperties::before {
+      content: $url_73;
+    }
+  }
+  .outlineItemToggler::before {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(0.5);
+    top: -1px;
+    content: $url_74;
+  }
+  .toolbarField.pageNumber.visiblePageIsLoading {
+    background-image: $url_41;
+    background-size: 16px 17px;
+  }
+  #viewThumbnail.toolbarButton::before {
+    content: $url_62;
+  }
+  html[dir="ltr"] #viewOutline.toolbarButton::before {
+    content: $url_63;
+  }
+  html[dir="rtl"] #viewOutline.toolbarButton::before {
+    content: $url_64;
+  }
+  #viewAttachments.toolbarButton::before {
+    content: $url_65;
+  }
+  #viewFind.toolbarButton::before {
+    content: $url_66;
+  }
+}
+@media print {
+  body {
+    background: transparent none;
+  }
+  #sidebarContainer {
+    display: none;
+  }
+  #secondaryToolbar {
+    display: none;
+  }
+  .toolbar {
+    display: none;
+  }
+  #loadingBox {
+    display: none;
+  }
+  #errorWrapper {
+    display: none;
+  }
+  .textLayer {
+    display: none;
+  }
+  #viewerContainer {
+    overflow: visible;
+    position: static;
+    padding: 0;
+    margin: 0;
+  }
+  #mainContainer {
+    position: static;
+    padding: 0;
+    margin: 0;
+  }
+  .page {
+    position: static;
+    padding: 0;
+    margin: 0;
+    float: left;
+    display: none;
+    border: none;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: content-box;
+    background-color: $white;
+    canvas {
+      position: static;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .page[data-loaded] {
+    display: block;
+  }
+  .fileInput {
+    display: none;
+  }
+  body[data-pdfjsprinting] {
+    #outerContainer {
+      display: none;
+    }
+    #printContainer {
+      display: block;
+    }
+  }
+  #printContainer {
+    height: 100%;
+    > div {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 1px;
+      overflow: visible;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+    canvas {
+      display: block;
+    }
+    img {
+      display: block;
+    }
+  }
+}
+.visibleLargeView {
+  display: none;
+}
+.visibleMediumView {
+  display: none;
+}
+.visibleSmallView {
+  display: none;
+}
+@media all and(max-width: 1040px) {
+  #outerContainer {
+    &.sidebarMoving #toolbarViewerMiddle {
+      display: table;
+      margin: auto;
+      left: auto;
+      position: inherit;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: none;
+    }
+    &.sidebarOpen #toolbarViewerMiddle {
+      display: table;
+      margin: auto;
+      left: auto;
+      position: inherit;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: none;
+    }
+  }
+}
+@media all and(max-width: 980px) {
+  .sidebarMoving {
+    .hiddenLargeView {
+      display: none;
+    }
+    .visibleLargeView {
+      display: inherit;
+    }
+  }
+  .sidebarOpen {
+    .hiddenLargeView {
+      display: none;
+    }
+    .visibleLargeView {
+      display: inherit;
+    }
+  }
+}
+@media all and(max-width: 900px) {
+  #toolbarViewerMiddle {
+    display: table;
+    margin: auto;
+    left: auto;
+    position: inherit;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: none;
+  }
+  .sidebarMoving {
+    .hiddenMediumView {
+      display: none;
+    }
+    .visibleMediumView {
+      display: inherit;
+    }
+  }
+  .sidebarOpen {
+    .hiddenMediumView {
+      display: none;
+    }
+    .visibleMediumView {
+      display: inherit;
+    }
+  }
+}
+@media all and(max-width: 840px) {
+  #sidebarContainer {
+    top: 32px;
+    z-index: 100;
+  }
+  #sidebarContent {
+    top: 32px;
+    background-color: $black_70;
+  }
+  #outerContainer {
+    .hiddenLargeView {
+      display: inherit;
+    }
+    .hiddenMediumView {
+      display: inherit;
+    }
+    .visibleLargeView {
+      display: none;
+    }
+    .visibleMediumView {
+      display: none;
+    }
+  }
+  .loadingInProgress #sidebarContainer {
+    top: 37px;
+  }
+  html[dir='ltr'] #outerContainer.sidebarOpen > #mainContainer {
+    left: 0;
+  }
+  html[dir='rtl'] #outerContainer.sidebarOpen > #mainContainer {
+    right: 0;
+  }
+}
+@media all and(max-width: 770px) {
+  #outerContainer {
+    .hiddenLargeView {
+      display: none;
+    }
+    .visibleLargeView {
+      display: inherit;
+    }
+  }
+}
+@media all and(max-width: 700px) {
+  #outerContainer {
+    .hiddenMediumView {
+      display: none;
+    }
+    .visibleMediumView {
+      display: inherit;
+    }
+  }
+}
+@media all and(max-width: 640px) {
+  .hiddenSmallView {
+    display: none;
+    * {
+      display: none;
+    }
+  }
+  .visibleSmallView {
+    display: inherit;
+  }
+  .toolbarButtonSpacer {
+    width: 0;
+  }
+  html[dir='ltr'] .findbar {
+    left: 38px;
+  }
+  html[dir='rtl'] .findbar {
+    right: 38px;
+  }
+}
+@media all and(max-width: 535px) {
+  #scaleSelectContainer {
+    display: none;
+  }
+}
+#viewThumbnail.toolbarButton::before {
+  content: $url_24;
+}
+#viewAttachments.toolbarButton::before {
+  content: $url_27;
+}
+#viewFind.toolbarButton::before {
+  content: $url_28;
+}
+a:focus > .thumbnail > .thumbnailSelectionRing {
+  background-color: $white_15;
+  background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+  //Instead of the line below you could use @include background-clip($clip)
+  background-clip: padding-box;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_20 inset, 0 0 1px $black_20;
+  color: $white_90;
+  > .thumbnailImage {
+    opacity: .9;
+  }
+}
+.attachmentsItem > button {
+  text-decoration: none;
+  display: inline-block;
+  min-width: 95%;
+  min-width: calc(100% - 4px);
+  height: auto;
+  margin-bottom: 1px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  color: $white_80;
+  font-size: 13px;
+  line-height: 15px;
+  white-space: normal;
+  border: 0 none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  &:hover {
+    background-color: $white_2;
+    background-image: linear-gradient($white_5, hsla(0,0%,100%,0));
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: padding-box;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $white_5 inset, 0 0 1px $white_20 inset, 0 0 1px $black_20;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 2px;
+    color: $white_90;
+  }
+}
+.loadingInProgress #errorWrapper {
+  top: 37px;
+}
+.debuggerHideText:hover {
+  background: none repeat scroll 0 0 $yellow;
+}
