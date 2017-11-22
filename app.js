@@ -48,6 +48,10 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/components',  express.static(__dirname + '/node_modules'));
 app.use('/uploads',  express.static(__dirname + '/uploads'));
+app.use('/stylesheets/images/',  express.static(__dirname + '/public/pdf/images/'));
+app.use('/locale/',  express.static(__dirname + '/public/pdf/locale/'));
+app.use('/pdf/images/',  express.static(__dirname + '/public/pdf/images/'));
+app.use('/pdf/cmaps/',  express.static(__dirname + '/public/pdf/cmaps/'));
 
 // session related
 app.use(session({

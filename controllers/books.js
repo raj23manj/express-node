@@ -173,7 +173,7 @@ router.get('/show/:id', function(req, res) {
 
 router.get('/:id/view_pdf', function(req, res){
   models.Book.find({where: {id: req.params.id}}).then(function(book){
-    res.render('books/view_pdf',{book: book});
+    res.render('books/viewer',{book: book});
   });
 });
 

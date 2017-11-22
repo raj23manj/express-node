@@ -19,8 +19,11 @@ block content
               | #{book.description}
             div.col-md-12
               a(href="/books/#{book.id}/view_pdf" , target="_blank") PDF Viewer
+            div.col-md-12
+              a(href="/books/viewer.jade?file=/uploads/#{book.uploadBookName}") PDF Viewer 2
 
           .form-group.col-md-6
             div
               - var image = (_.isEmpty(book.image)) ? '/images/no_image.png' : "/uploads/" + book.image
               img.card-img-top(src="#{image}", alt='')
+
