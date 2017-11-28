@@ -47,7 +47,7 @@ module.exports = function(sequelize, DataTypes) {
     {
       hooks: {
         beforeCreate: (user, options) => {
-          user.password =this.generateHash(user.password);
+          user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(8), null);
         }
       },
       classMethods: {

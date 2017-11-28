@@ -28,7 +28,7 @@ router.post('/register_submit', function(req, res) {
     }else {
       user.save().then(function() {
         req.flash('info', 'User register Successfully !');
-        res.redirect('/books');
+        res.redirect('/registrations/login');
       });
     }
   });
