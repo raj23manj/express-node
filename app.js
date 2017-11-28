@@ -19,6 +19,7 @@ var winston = require('winston'),
   expressWinston = require('express-winston');
 var sassMiddleware = require('node-sass-middleware');
 var PrettyError = require('pretty-error');
+var pry = require('pryjs')
 
 //Set globally
 app.locals.moment = moment;
@@ -26,6 +27,7 @@ app.locals.moment = moment;
 
 global.appRoot = path.resolve(__dirname);
 global._ = _;
+global.pry = pry;
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade');

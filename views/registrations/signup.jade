@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+	.row.justify-content-md-center
+		.col-md-8
+			include ../partials/errors
+			form(action="/registrations/register_submit" method="post" class="my-4")
+				div.form-title
+					h4 Register User
+					include ../registrations/partials/form

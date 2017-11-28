@@ -12,9 +12,13 @@
   - To use Sequilize to migrate the DB
     - $ node_modules/.bin/sequelize db:migrate
     
+  - To create model with migration
+    - node_modules/.bin/sequelize model:create --name MyUser --attributes first_name:string,last_name:string,bio:text
+      
   - To generate new migration File
     - node_modules/.bin/sequelize migration:generate --name yourMigrationName  
 
+> Database:
 > Database:
 
   - To Create db locally
