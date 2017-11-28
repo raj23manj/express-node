@@ -14,13 +14,16 @@ router.post('/register_submit', function(req, res) {
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     email: req.body.email,
-    password: models.User.generateHash(req.body.password)
+    password: req.body.password
   });
+
+  if(!(req.body.password === req.body.confirm_password)){
+    res.render('registrations/signup', {errors: [{ path: "Password", message: " And Confirm Password Do Not Match" }]});
+  }
 
   user.validate().then(function(errors) {
     if(errors)
     {
-      //eval(pry.it)
       res.render('registrations/signup', {errors: errors["errors"]});
     }else {
       user.save().then(function() {

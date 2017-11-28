@@ -35,8 +35,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       validate: {
         Empty(){
-          if(this.password == ''){
-            throw new Error(' cannot be empty !');
+          if (this.password == '')
+          {
+            throw new Error(' cannot be empty!');
           }
         }
       }
@@ -44,6 +45,11 @@ module.exports = function(sequelize, DataTypes) {
     salt: DataTypes.STRING
   },
     {
+      hooks: {
+        beforeCreate: (user, options) => {
+          user.password =this.generateHash(user.password);
+        }
+      },
       classMethods: {
         associate: function(models) {
           // associations can be defined here
