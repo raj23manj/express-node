@@ -2,11 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 const models = require('../server/models/');
-const async = require('async');
-const path = require('path');
 const LocalStrategy = require('passport-local').Strategy;
-const pry = require('pryjs')
-
 
 router.get('/signup', function(req, res) {
   res.render('registrations/signup', { });
@@ -24,7 +20,8 @@ router.post('/register_submit', function(req, res) {
   user.validate().then(function(errors) {
     if(errors)
     {
-      //new_or_edit(req, res, errors["errors"]);
+      //eval(pry.it)
+      res.render('registrations/signup', {errors: errors["errors"]});
     }else {
       user.save().then(function() {
         req.flash('info', 'User register Successfully !');
