@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+	.row.justify-content-md-center
+		.col-md-8
+			include ../partials/errors
+			form(action="/registrations/login_post" method="post" class="my-4")
+				div.form-title
+					h4 Login User
+					.form-row
+						.form-group.col-md-6
+							label.col-md-12 Email:
+							input(type="text" name="email" class="form-control")
+						
+						.form-group.col-md-6
+							label.col-md-12 Password:
+							input(type="text" name="password" class="form-control")
+					
+					.form-group.text-right
+						input.col-md-3(type="submit" value="Submit" class="btn btn-primary")
