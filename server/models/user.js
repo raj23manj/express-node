@@ -1,5 +1,5 @@
 'use strict';
-var bcrypt   = require('bcrypt-nodejs');
+var bcrypt = require('bcryptjs');
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
     first_name: {
@@ -44,25 +44,35 @@ module.exports = function(sequelize, DataTypes) {
     },
     salt: DataTypes.STRING
   },
-    {
-      hooks: {
-        beforeCreate: (user, options) => {
-          user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(8), null);
-        }
-      },
-      classMethods: {
-        associate: function(models) {
-          // associations can be defined here
-        },
-        generateHash : function(password) {
-          return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-        }
-      },
-      instanceMethods: {
-        validPassword : function(password) {
-          return bcrypt.compareSync(password, this.localpassword);
-        }
+  {
+    hooks: {
+      beforeCreate: (user, options) => {
+        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(8), null);
       }
+    },
+    classMethods: {
+      associate: function(models) {
+        // associations can be defined here
+      },
+      generateHash : function(password) {
+        return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+      }
+    },
+    instanceMethods: {
+      validPassword : function(password) {
+        return bcrypt.compareSync(password, this.localpassword);
+      }
+    }
   });
+
+  User.createUser = function(newUser, callback){
+    bcrypt.genSalt(10, function(err, salt) {
+      bcrypt.hash(newUser.password, salt, function(err, hash) {
+        newUser.password = hash;
+        newUser.save(callback);
+      });
+    });
+  }
+
   return User;
 };

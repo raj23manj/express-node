@@ -9,7 +9,30 @@ router.get('/signup', function(req, res) {
 });
 
 router.post('/register_submit', function(req, res) {
+  var user = models.User.build({
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    email: req.body.email,
+    password: req.body.password
+  });
 
+  if(!(req.body.password === req.body.confirm_password)){
+    res.render('registrations/signup', {errors: [{ path: "Password", message: " And Confirm Password Do Not Match" }]});
+  }
+
+  user.validate().then(function(errors) {
+    if(errors)
+    {
+      res.render('registrations/signup', {errors: errors["errors"]});
+    }else {
+      models.User.createUser(user,function(err, user){
+        if(err) throw err;
+        console.log(user);
+      });
+      req.flash('info', 'User register Successfully !');
+      res.redirect('/registrations/login');
+    }
+  });
 
 });
 
