@@ -19,6 +19,10 @@ var winston = require('winston'),
   expressWinston = require('express-winston');
 var sassMiddleware = require('node-sass-middleware');
 var PrettyError = require('pretty-error');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').strategy;
+var pry = require('pryjs');
+
 
 //Set globally
 app.locals.moment = moment;
@@ -26,6 +30,7 @@ app.locals.moment = moment;
 
 global.appRoot = path.resolve(__dirname);
 global._ = _;
+global.pry = pry;
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade');
@@ -65,6 +70,10 @@ app.use(session({
   cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 days
 }));
 app.use(expressFlash());
+
+// Passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 expressWinston.requestWhitelist.push('body');
 
