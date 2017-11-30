@@ -129,3 +129,9 @@ app.use(function(err, req, res, next){
   console.log(pe.render(err));
   next();
 });
+
+// to set global loggedin user
+app.get('*', function(req, res, next){
+  res.locals.user = req.user || null;
+  next();
+});

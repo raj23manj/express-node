@@ -40,22 +40,17 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login_post', passport.authenticate('local', {failureRedirect: '/registrations/login', failureFlash: 'Invalid UserName Or Password !'}), function(req, res) {
-
-  console.log('hi');
   req.flash('info', 'Login Successful !');
-  // set seeion user
   res.redirect('/books/');
-
 });
 
 router.get('/logout', function(req, res) {
   req.logout();
-  res.redirect('/');
+  res.redirect('/registrations/login');
 });
 
 
 module.exports = router;
-
 
 // private functions
 
