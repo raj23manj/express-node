@@ -33,14 +33,18 @@ router.post('/register_submit', function(req, res) {
       res.redirect('/registrations/login');
     }
   });
-
 });
 
 router.get('/login', function(req, res) {
   res.render('registrations/login', { });
 });
 
-router.post('/login_post', function(req, res, next) {
+router.post('/login_post', passport.authenticate('local', {failureRedirect: '/registrations/login', failureFlash: 'Invalid UserName Or Password !'}), function(req, res) {
+
+  console.log('hi');
+  req.flash('info', 'Login Successful !');
+  // set seeion user
+  res.redirect('/books/');
 
 });
 
@@ -51,3 +55,36 @@ router.get('/logout', function(req, res) {
 
 
 module.exports = router;
+
+
+// private functions
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  models.User.findAll({where: { id: id }}).then((user, err) => {
+    done(err, user);
+  });
+});
+
+passport.use(new LocalStrategy({usernameField: 'email', passwordField: 'password'},function(username, password, done){
+  models.User.findAll({where: {email: username}}).then((user, err) => {
+    user = user[0];
+    if(err) throw err;
+    if(!user){
+      return done(null, false, {message: 'unknown User'});
+    }
+    models.User.comparePassword(password, function(err, isMatch){
+      if(err) return done(err);
+      if(isMatch){
+        return done(null, user);
+      }else{
+        return done(null, false, {message: 'Invalid Password'});
+      }
+    });
+
+  });
+
+}));

@@ -42,7 +42,8 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     },
-    salt: DataTypes.STRING
+    token: DataTypes.STRING,
+    is_verified: DataTypes.BOOLEAN
   },
   {
     hooks: {
@@ -66,13 +67,25 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   User.createUser = function(newUser, callback){
-    bcrypt.genSalt(10, function(err, salt) {
-      bcrypt.hash(newUser.password, salt, function(err, hash) {
+    // bcrypt.genSalt(10, function(err, salt) {
+      bcrypt.hash(newUser.password, 10, function(err, hash) {
         newUser.password = hash;
         newUser.save(callback);
       });
-    });
+    // });
+  };
+
+  User.comparePassword = function(candidatePassword, callback){
+    bcrypt.hash(candidatePassword, 10, function(err, hash) {
+      if (err) { throw (err); }
+      bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
+        // res === true
+        callback(null, isMatch);
+      });
+    }
+    );
   }
 
   return User;
 };
+

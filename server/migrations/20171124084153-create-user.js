@@ -21,10 +21,11 @@ module.exports = {
         type: Sequelize.STRING
       },
       token: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       is_verified: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
       },
       createdAt: {
         allowNull: false,
