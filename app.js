@@ -101,6 +101,7 @@ app.use(expressWinston.errorLogger({
   ]
 }));
 
+
 module.exports = app;
 
 require ('./routes')(app);
@@ -130,8 +131,9 @@ app.use(function(err, req, res, next){
   next();
 });
 
-// to set global loggedin user
-app.get('*', function(req, res, next){
-  res.locals.user = req.user || null;
-  next();
-});
+// // to set global loggedin user
+// app.get('*', function(req, res, next){
+//   res.locals.user = req.user || null;
+//   res.redirect('/registrations/login');
+//   next();
+// });

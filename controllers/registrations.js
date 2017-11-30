@@ -40,11 +40,13 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login_post', passport.authenticate('local', {failureRedirect: '/registrations/login', failureFlash: 'Invalid UserName Or Password !'}), function(req, res) {
+  authenticatedUser = req.user.id;
   req.flash('info', 'Login Successful !');
   res.redirect('/books/');
 });
 
 router.get('/logout', function(req, res) {
+  authenticatedUser = null;
   req.logout();
   res.redirect('/registrations/login');
 });

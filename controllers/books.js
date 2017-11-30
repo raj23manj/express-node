@@ -14,6 +14,8 @@ const storage = multer.diskStorage({
   }
 })
 
+const ensureAuthentication = require('../controllers/ensureAuthentication');
+
 const upload = multer({storage: storage,
                        fileFilter: function (req, file, cb) {
                          if(file.fieldname == 'uploadBookName'){
@@ -26,7 +28,7 @@ const upload = multer({storage: storage,
                     });
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', ensureAuthentication.authenticateUser(), function(req, res, next) {
   async.parallel({
     books: function(callback) {
       models.Book.findAll({
@@ -48,11 +50,11 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/new', function(req, res) {
+router.get('/new', ensureAuthentication.authenticateUser(), function(req, res) {
   new_or_edit(req, res, null);
 });
 
-router.post('/create', upload.fields([{name: 'uploadBookName', maxCount: 1}, {name: 'uploadBookImage', maxCount: 1}]), function(req, res) {
+router.post('/create', ensureAuthentication.authenticateUser(), upload.fields([{name: 'uploadBookName', maxCount: 1}, {name: 'uploadBookImage', maxCount: 1}]), function(req, res) {
   var book = models.Book.build({ name: req.body.name,
                                  AuthorId: req.body.AuthorId,
                                  CategoryId: req.body.CategoryId,
@@ -73,7 +75,7 @@ router.post('/create', upload.fields([{name: 'uploadBookName', maxCount: 1}, {na
     });
 });
 
-router.get('/:id/edit', function(req, res) {
+router.get('/:id/edit', ensureAuthentication.authenticateUser(), function(req, res) {
     models.Book.findOne({
         where: {
             id: req.params.id
@@ -90,7 +92,7 @@ router.get('/:id/edit', function(req, res) {
     });
 });
 
-router.post('/:id', function(req, res) {
+router.post('/:id', ensureAuthentication.authenticateUser(), function(req, res) {
     models.Book.findById(req.params.id).then(function(book){
             if(book){
                 book.updateAttributes({
@@ -103,7 +105,7 @@ router.post('/:id', function(req, res) {
     });
 });
 
-router.get('/:id/destroy', function (req, res) {
+router.get('/:id/destroy', ensureAuthentication.authenticateUser(), function (req, res) {
     models.Book.destroy({
         where: {
             id: req.params.id
@@ -165,13 +167,13 @@ router.get('/search', function (req, res) {
   });
 });
 
-router.get('/show/:id', function(req, res) {
+router.get('/show/:id', ensureAuthentication.authenticateUser(), function(req, res) {
   models.Book.find({where: {id: req.params.id}, include: [models.Author, models.Category] }).then(function(book){
     res.render('books/show', {book: book});
   });
 });
 
-router.get('/:id/view_pdf', function(req, res){
+router.get('/:id/view_pdf', ensureAuthentication.authenticateUser(), function(req, res){
   models.Book.find({where: {id: req.params.id}}).then(function(book){
     res.render('books/viewer',{book: book});
   });
@@ -192,4 +194,3 @@ var new_or_edit = function(req, res, errors){
     });
   });
 }
-

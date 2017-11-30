@@ -3,10 +3,11 @@ const router = express.Router();
 const models = require('../server/models/');
 const {check, validationResult, body} = require('express-validator/check');
 const {matchedData, sanitize} = require('express-validator/filter');
+const ensureAuthentication = require('../controllers/ensureAuthentication');
 
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', ensureAuthentication.authenticateUser(), function (req, res, next) {
   models.Category.findAll({
     order: [
       ['id', 'DESC']
@@ -16,11 +17,11 @@ router.get('/', function (req, res, next) {
   });
 });
 
-router.get('/new', function (req, res, next) {
+router.get('/new', ensureAuthentication.authenticateUser(), function (req, res, next) {
   res.render('categories/new', {errors: {}, object: {}});
 });
 
-router.post('/create', function(req, res) {
+router.post('/create', ensureAuthentication.authenticateUser(), function(req, res) {
   var category = models.Category.build({name: req.body.name});
   category.validate().then(function(errors){
     if(errors){
@@ -35,7 +36,7 @@ router.post('/create', function(req, res) {
   });
 });
 
-router.get('/:id/edit', function (req, res) {
+router.get('/:id/edit', ensureAuthentication.authenticateUser(), function (req, res) {
   models.Category.findOne({
     where: {
       id: req.params.id
@@ -45,7 +46,7 @@ router.get('/:id/edit', function (req, res) {
   });
 });
 
-router.post('/:id', function (req, res) {
+router.post('/:id', ensureAuthentication.authenticateUser(), function (req, res) {
   models.Category.findById(req.params.id).then(function (category) {
     if (category) {
       category.updateAttributes({
@@ -57,7 +58,7 @@ router.post('/:id', function (req, res) {
   });
 });
 
-router.get('/:id/destroy', function (req, res) {
+router.get('/:id/destroy', ensureAuthentication.authenticateUser(), function (req, res) {
   models.Category.destroy({
     where: {
       id: req.params.id
