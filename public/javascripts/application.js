@@ -4,9 +4,13 @@ head.load(
   "/stylesheets/style.css",
   "/components/font-awesome/css/font-awesome.min.css",
   "/components/bootstrap/dist/css/bootstrap.css",
-  // Load Javascripts
+  // Load Javascripts Vendor specific
   "/components/jquery/dist/jquery.js",
   "/components/popper.js/dist/umd/popper.js",
   "/components/bootstrap/dist/js/bootstrap.js",
+  "/javascripts/pdf_viewer.js",
+  "/javascripts/custom_viewer.js",
+
+  // Load application js files
   "/javascripts/books.js"
 );
