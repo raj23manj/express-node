@@ -8,6 +8,9 @@
 
   - Using nodemon to start <this command detects changes and restarts automatically>
     - $ npm run start:dev
+    
+  - Update any nodel module
+  	- npm update 'package_name' --save   
 
   - To use Sequilize to migrate the DB
     - $ node_modules/.bin/sequelize db:migrate
