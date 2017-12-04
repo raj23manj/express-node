@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+	.row.justify-content-md-center
+		.col-md-8
+			include ../partials/errors
+			form(action="/authors/#{object.id}" method="post" class="my-4")
+				div.form-title
+					h4 EDIT AUTHOR
+				include partials/form

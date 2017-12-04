@@ -1,0 +1,8 @@
+.form-row
+	.form-group.col-md-6
+		label Author Name:
+			- var value = (_.isEmpty(object)) ? "" : object.name
+			input(type="text" name="name" value="#{value}" class="form-control")
+
+.form-group.text-right
+	input.col-md-3(type="submit" value="Create" class="btn btn-primary")

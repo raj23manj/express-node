@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+	.row.justify-content-md-center
+		.col-md-8
+			include ../partials/flash
+			div.my-4
+				div.form-title
+					h4 AUTHORS
+					a(href='/authors/new') Add a new Author
+					each author in data
+						.form-row
+							.form-group.col-md-6
+								label Author Name: #{author.name}
+							.form-group.col-md-6
+								.form-group.text-right
+									a(href='/authors/#{author.id}/edit' class='col-md-3 btn btn-info') Edit
+									a(href='/authors/#{author.id}/destroy' class='col-md-3 btn btn-danger') Delete
