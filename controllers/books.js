@@ -185,10 +185,28 @@ router.get('/:id/view_pdf', ensureAuthentication.authenticateUser(), function(re
 router.get('/download_xls', (req, res) => {
   let xls = new Xls ('./excel_uploads/temp.xlsx');
   xls.download().then(function() {
-        // done
-        console.log('file is written');
-        res.download('./excel_uploads/temp.xlsx');
-    });;
+    console.log('file is written');
+    res.download('./excel_uploads/temp.xlsx');
+  });
+});
+
+router.get('/import_date', (req, res) => {
+  let xls = new Xls ('./excel_uploads/temp.xlsx');
+  let dataInsert = [], rowValues = null, rowArray = [];
+  xls.import()
+  .then(data => {
+    data[0].eachRow(function(row, rowNumber) {
+      if (rowNumber == 1){
+        return;
+      };
+      rowArray.push({id: row.values[1], name: row.values[2], date: row.values[3]});
+    });
+    return rowArray;
+  })
+  .then(objects => {
+    models.ImportData.bulkCreate(objects)
+    .then(() => { console.log("imported sucessfully") });
+  });
 });
 
 module.exports = router;
