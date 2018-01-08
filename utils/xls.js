@@ -6,7 +6,7 @@ class Xls {
     this.filePath = path
   }
 
-  download(req, res){
+  download() {
     let workbook = new Excel.Workbook();
     let worksheet = workbook.addWorksheet('My Sheet');
     let tempFilePath = this.filePath;
@@ -17,11 +17,8 @@ class Xls {
           ];
     worksheet.addRow({id: 1, name: 'John Doe', dob: new Date(1970,1,1)});
     worksheet.addRow({id: 2, name: 'Jane Doe', dob: new Date(1965,1,7)});
-    workbook.xlsx.writeFile(tempFilePath).then(function() {
-        // done
-        console.log('file is written');
-        res.download(tempFilePath);
-    });
+    // return a promise
+    return workbook.xlsx.writeFile(tempFilePath);
   }
 }
 

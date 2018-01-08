@@ -184,7 +184,11 @@ router.get('/:id/view_pdf', ensureAuthentication.authenticateUser(), function(re
 
 router.get('/download_xls', (req, res) => {
   let xls = new Xls ('./excel_uploads/temp.xlsx');
-  xls.download(req, res);
+  xls.download().then(function() {
+        // done
+        console.log('file is written');
+        res.download('./excel_uploads/temp.xlsx');
+    });;
 });
 
 module.exports = router;
