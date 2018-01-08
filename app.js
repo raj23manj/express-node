@@ -22,7 +22,7 @@ var PrettyError = require('pretty-error');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').strategy;
 var pry = require('pryjs');
-
+var reload = require('reload');
 
 
 //Set globally
@@ -137,3 +137,5 @@ app.use(function(err, req, res, next){
 //   res.redirect('/registrations/login');
 //   next();
 // });
+
+reload(app);

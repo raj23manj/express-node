@@ -1,32 +1,49 @@
 extends ../layout
 
 block content
-  .container
-    nav.my-4(aria-label='breadcrumb', role='navigation')
-      ol.breadcrumb
-        li.breadcrumb-item
-          a(href='/books') Home
-        li.breadcrumb-item.active(aria-current='page') Book Details
-    .row.my-4
-      .col-lg-3
-        include ../books/partials/book_image
-      .col-lg-9
-        h5
-          | #{book.name}
-        ul.unstyle
-          li
-            span Author :
-            strong #{book.Author.name}
-          li
-            span Category :
-            strong #{book.Category.name}
-        p.card-text
-          | #{book.description}
-    .row.my-4
-      .col
-        h5
-          | Read Book
-        .canvas
-          small Want to read the book ?
-          a(href="/books/#{book.id}/view_pdf" , target="_blank") Click
-          
+	.container
+		nav.my-4(aria-label='breadcrumb', role='navigation')
+			ol.breadcrumb
+				li.breadcrumb-item
+					a(href='/books') Home
+				li.breadcrumb-item.active(aria-current='page') Book Details
+		.row.my-4
+			.col-lg-3
+				include ../books/partials/book_image
+			.col-lg-9
+				h5
+					| #{book.name}
+				ul.unstyle
+					li
+						span Author :
+						strong #{book.Author.name}
+					li
+						span Category :
+						strong #{book.Category.name}
+				p.card-text
+					| #{book.description}
+		.row.my-4
+			.col
+				h5
+					| Read Book
+				.canvas
+					small Want to read the book ?
+					a(href="/books/#{book.id}/view_pdf" , target="_blank") Click
+		
+		nav.my-4(aria-label='breadcrumb', role='navigation')
+			h4 User feedbacks
+			input.col-md-3(type="button" value="Write your own feedback" class="btn btn-primary review_button")
+			
+			.form-row.feedback_div_form.hidden
+				.form-group.col-md-12
+					label Feedback:
+					div
+						input(type='text', name='feedback' class='form-control', id='feedback')
+				
+				.form-group.col-md-12.text-right
+					input.col-md-3(type="submit" value="Submit" data-book-id="#{book.id}" class="btn btn-primary submit_feedback")
+			h4 Top user feedbacks
+			div.user_feedbacks
+				By: SABYASACHI
+				ON: on 29 June 2017
+				Good for reference, cost is not much can easily buy

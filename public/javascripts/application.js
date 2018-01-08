@@ -8,6 +8,7 @@ head.load(
   "/components/jquery/dist/jquery.js",
   "/components/popper.js/dist/umd/popper.js",
   "/components/bootstrap/dist/js/bootstrap.js",
+  "/components/reload/lib/reload.js",
   "/javascripts/pdf_viewer.js",
   "/javascripts/custom_viewer.js",
 

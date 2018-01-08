@@ -62,6 +62,9 @@ body {
   margin: auto;
   text-align: center; }
 
+.hidden {
+  display: none !important; }
+
 /*# sourceMappingURL=custom-DBS.css.map */
 
 /*# sourceMappingURL=custom.css.map */
