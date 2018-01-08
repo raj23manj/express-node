@@ -27,6 +27,9 @@ const upload = multer({storage: storage,
                        }
                     });
 
+const Xls = require('./../utils/xls');
+
+
 /* GET home page. */
 router.get('/', ensureAuthentication.authenticateUser(), function(req, res, next) {
   async.parallel({
@@ -179,7 +182,10 @@ router.get('/:id/view_pdf', ensureAuthentication.authenticateUser(), function(re
   });
 });
 
-
+router.get('/download_xls', (req, res) => {
+  let xls = new Xls ('./excel_uploads/temp.xlsx');
+  xls.download(req, res);
+});
 
 module.exports = router;
 

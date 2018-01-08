@@ -26,5 +26,5 @@ function click (e) {
 
 if (document.layers)
 document.captureEvents(Event.MOUSEDOWN);
-document.onmousedown = click;
-document.oncontextmenu = click;
+//document.onmousedown = click;
+//document.oncontextmenu = click;
