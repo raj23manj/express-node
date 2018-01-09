@@ -124,12 +124,17 @@ app.use(function(req, res, next) {
 //   res.render('error');
 // });
 
-pe = new PrettyError();
-// and use it for our app's error handler:
-app.use(function(err, req, res, next){
-  console.log(pe.render(err));
-  next();
-});
+
+if (app.get('env') === 'development') {
+  pe = new PrettyError();
+  // and use it for our app's error handler:
+  app.use(function(err, req, res, next){
+    console.log(pe.render(err));
+    next();
+  });
+}
+
+
 
 // // to set global loggedin user
 // app.get('*', function(req, res, next){
