@@ -32,25 +32,33 @@ const Xls = require('./../utils/xls');
 
 /* GET home page. */
 router.get('/', ensureAuthentication.authenticateUser(), function(req, res, next) {
-  async.parallel({
-    books: function(callback) {
-      models.Book.findAll({
-        include: [models.Author, models.Category],
-        order: [
-          ['id', 'DESC']
-        ]}).then(function(data){
-        callback(null, data)
+  // async.parallel({
+  //   books: function(callback) {
+  //     models.Book.findAll({
+  //       include: [models.Author, models.Category],
+  //       order: [
+  //         ['id', 'DESC']
+  //       ]}).then(function(data){
+  //       callback(null, data)
+  //     });
+  //   },
+  //   categories: function(callback) {
+  //     models.Category.findAll({ order: [['name', 'ASC']] }).then(function(data){
+  //       callback(null, data)
+  //     });
+  //   },
+  // }, function(err, results) {
+  //   if (err) { return next(err); }
+  //   res.render('books/index', {title: 'Books Index', data: results.books, categories: results.categories } );
+  // });
+
+  let booksPromise =  models.Book.findAll({include: [models.Author, models.Category],order: [['id', 'DESC']]}),
+      categoriesPromise =  models.Category.findAll({ order: [['name', 'ASC']] });
+
+      Promise.all([booksPromise, categoriesPromise])
+      .then((results) => {
+        res.render('books/index', {title: 'Books Index', data: results[0], categories: results[1] } )
       });
-    },
-    categories: function(callback) {
-      models.Category.findAll({ order: [['name', 'ASC']] }).then(function(data){
-        callback(null, data)
-      });
-    },
-  }, function(err, results) {
-    if (err) { return next(err); }
-    res.render('books/index', {title: 'Books Index', data: results.books, categories: results.categories } );
-  });
 });
 
 router.get('/new', ensureAuthentication.authenticateUser(), function(req, res) {
@@ -79,20 +87,48 @@ router.post('/create', ensureAuthentication.authenticateUser(), upload.fields([{
 });
 
 router.get('/:id/edit', ensureAuthentication.authenticateUser(), function(req, res) {
-    models.Book.findOne({
-        where: {
-            id: req.params.id
-        }
-    }).then(function(data){
-      models.Category.findAll({ order: [['name', 'ASC']] }).then(function(categories){
-        models.Author.findAll({ order: [['name', 'ASC']] }).then(function(authors){
-          res.render('books/edit', {categories: categories,
+    // antipattern
+    // models.Book.findOne({
+    //     where: {
+    //         id: req.params.id
+    //     }
+    // }).then(function(data){
+    //   models.Category.findAll({ order: [['name', 'ASC']] }).then(function(categories){
+    //     models.Author.findAll({ order: [['name', 'ASC']] }).then(function(authors){
+    //       res.render('books/edit', {categories: categories,
+    //                                 buttonName: 'Submit',
+    //                                 authors: authors,
+    //                                 object: data });
+    //     });
+    //   });
+    // });
+    
+    // still anti pattern using variable
+
+    // let user;
+    // models.Book.findOne({where: { id: req.params.id}})
+    // .then((data) => { user = data })
+    // .then(() => { 
+    //   return Promise.all([models.Category.findAll({ order: [['name', 'ASC']] }), models.Author.findAll({ order: [['name', 'ASC']] })])
+    //  })
+    // .then((results) => {
+    //   res.render('books/edit', {categories: results[0],
+    //                             buttonName: 'Submit',
+    //                             authors: results[1],
+    //                             object: user });
+    // });
+
+    let bookPromise = models.Book.findOne({where: { id: req.params.id}}),
+        authorsPromise = models.Author.findAll({ order: [['name', 'ASC']] }),
+        categoriesPromise = models.Category.findAll({ order: [['name', 'ASC']] });
+
+        Promise.all([bookPromise, authorsPromise, categoriesPromise])
+        .then((results) => {
+          res.render('books/edit', {categories: results[2],
                                     buttonName: 'Submit',
-                                    authors: authors,
-                                    object: data });
+                                    authors: results[1],
+                                    object: results[0] });
         });
-      });
-    });
 });
 
 router.post('/:id', ensureAuthentication.authenticateUser(), function(req, res) {

@@ -1,3 +1,6 @@
+
+var Author = require('../test/factories/author');
+
 const request = require('supertest');
 const expect = require('chai').expect;
 const app = require('../app');
@@ -23,14 +26,38 @@ before(function(done){
 });
 
 
-describe("Authors Routes", () => {
+// describe("Authors Routes Index No Authentication", () => {
 
-  // without authenticated user
-  it("should get all authors", (done) => {
-    request(app).get('/authors/').expect('Location', '/registrations/login').end(done);
-  });
+//   // without authenticated user
+//   it("should not get all authors", (done) => {
+//     request(app).get('/authors/').expect('Location', '/registrations/login').end(done);
+//   });
+
+//   // for authenticated user
+
+//   // it('test', (done) => {
+//   //    authenticatedUser
+//   //   .post('/registrations/login_post')
+//   //   .send(userCredentials)
+//   //   .end(function(err, res){
+//   //     //expect(res.statusCode).to.equal(302);
+//   //     console.log(res.header['location']);
+//   //     expect(res.header['location']).to.equal('/books/')
+//   //     //expect(res.header['location'], '/books/aa');
+//   //     done();
+//   //   });
+//   // });
+
+// });
+
+
+describe("Authors with authentication", () => {
+
+  let author = Author.build({});
+  // https://github.com/rosiejs/rosie/issues/23
 
   it("should get all authors", (done) => {
+       console.log(author);
        authenticatedUser.get('/authors/').end((err, res) => {
         // if console logged not getting response text but working keep in mind
           let $ = cheerio.load(res.text);
@@ -39,20 +66,4 @@ describe("Authors Routes", () => {
           done();
        });
     });
-
-  // for authenticated user
-
-  // it('test', (done) => {
-  //    authenticatedUser
-  //   .post('/registrations/login_post')
-  //   .send(userCredentials)
-  //   .end(function(err, res){
-  //     //expect(res.statusCode).to.equal(302);
-  //     console.log(res.header['location']);
-  //     expect(res.header['location']).to.equal('/books/')
-  //     //expect(res.header['location'], '/books/aa');
-  //     done();
-  //   });
-  // });
-
 });
