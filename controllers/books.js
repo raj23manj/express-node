@@ -87,6 +87,10 @@ router.post('/create', ensureAuthentication.authenticateUser(), upload.fields([{
 });
 
 router.get('/:id/edit', ensureAuthentication.authenticateUser(), function(req, res) {
+    // refference
+    //  https://runnable.com/blog/common-promise-anti-patterns-and-how-to-avoid-them
+    //  http://jamesknelson.com/grokking-es6-promises-the-four-functions-you-need-to-avoid-callback-hell/
+    
     // antipattern
     // models.Book.findOne({
     //     where: {
