@@ -24,13 +24,11 @@ describe("/authors", () => {
                 .returns(function(req, res, next) {
                   next();
                 });
-                
-    //authStub['@global'] = true;            
-                    
+                                    
     
-    // app = proxyquire('../app', {
-    //   ensureAuthentication: authStub
-    // });              
+    app = proxyquire('../app', {
+      ensureAuthentication: authStub
+    });              
   });
   
   after(function() {
@@ -91,7 +89,71 @@ describe("/authors", () => {
     });
     
   });
-});
+  
+  context("New User", () => {
+    it("render new page", (done) => {
+      request(app).get('/authors/new').expect(200).end(done)
+    });
+  });
+  
+  context("Create User", () => {
+    let dbStub;
+        
+        before(function(){
+          
+          // buildStub = sinon
+          //             .stub(models.Author, 'build')
+          //             .returns({name: 'king'});
+          // 
+          // dbStub = sinon
+          //             .stub(models.Author, 'save')
+          //             .returns(Promise.resolve());
+          // 
+          // app = proxyquire('../app', {
+          //   ensureAuthentication: authStub//,
+          //   models: { Author: dbStub } //{ Author: buildStub, dbStub }
+          // });              
+        });
+        
+        // one solution
+        after(function(){
+          models.Author.destroy({where: {}});
+        });
+          
+        it("build new user and render", (done) => {
+          request(app).post('/authors/create')
+          .send({name: 'king'})
+          .expect(302)
+          .expect('Location', '/authors/')
+          .end(done)
+        });
+  });
+    
+    
+  context("delete User", () => {
+    let dbStub;
+        
+        before(function(){
+          dbStub = sinon
+                      .stub(models.Author, 'destroy')
+                      .returns(Promise.resolve());
+          
+          app = proxyquire('../app', {
+            ensureAuthentication: authStub,
+            models: { Author: dbStub } 
+          });              
+        });
+      
+        it("destroy user", (done) => {
+          request(app).get('/authors/23/destroy')
+          .expect(302)
+          .expect('Location', '/authors')
+          .end(done)
+        });
+  });  
+
+
+}); // main describe
 
 // #############################################################################
 //spy
