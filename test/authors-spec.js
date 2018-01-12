@@ -11,7 +11,7 @@ const sinonChai = require("sinon-chai");
 chai.use(sinonChai);
 const auth = require('../controllers/ensureAuthentication');
 
-//const models = require('../server/models/');
+const models = require('../server/models/');
 
 describe("/authors", () => {
   
@@ -41,20 +41,46 @@ describe("/authors", () => {
     let dbStub;
     
     before(function(){
-      dbStub = {
-        findAll: function() {
-          return Promise.resolve([]);
-        }
-      };
+      // dbStub = {
+      //   findAll: function() {
+      //     return Promise.resolve([
+      //       { id: 1,
+      //         name: 'Rajesh',
+      //         createdAt: '2017-10-09T18:30:00.000Z',
+      //         updatedAt: '2017-10-09T18:30:00.000Z'
+      //       }
+      //     ]);
+      //   }
+      // };
+      
+      dbStub = sinon
+                  .stub(models.Author, 'findAll')
+                  .returns(
+                     Promise.resolve([
+                         { id: 1,
+                           name: 'Rajesh',
+                           createdAt: '2017-10-09T18:30:00.000Z',
+                           updatedAt: '2017-10-09T18:30:00.000Z'
+                         }
+                       ])
+                  );
       
       app = proxyquire('../app', {
         ensureAuthentication: authStub,
-        'models.Author': dbStub
+        models: { Author: dbStub}
       });  
     });
     
     it('should get all authors', (done) => {
-      request(app).get('/authors/').expect(200).end(done);
+      // request(app).get('/authors/').expect(200).end(done);
+      
+      request(app).get('/authors/').end((err, res) => {
+        let $ = cheerio.load(res.text);
+        let divs = $("body").find('.form-row').length;
+        // console.log(res.text);
+        expect(divs).to.equal(1);
+        done();
+      });
     });
     
   });

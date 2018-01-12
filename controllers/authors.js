@@ -10,6 +10,7 @@ router.get('/', ensureAuthentication.authenticateUser(), function (req, res, nex
       ['id', 'DESC']
     ]
   }).then(function (data) {
+    console.log(data);
     res.render('authors/index', {title: 'Author Index', data: data, errors: {}});
   });
 });
