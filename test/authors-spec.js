@@ -69,6 +69,13 @@ describe("/authors", () => {
         ensureAuthentication: authStub,
         models: { Author: dbStub}
       });  
+      
+      // const models = require('../server/models/');
+      // const models = require('../server/models/').Author;
+      // .stub(models, 'findAll')
+      // .stub(models.Author, 'findAll')
+      // models:  dbStub
+      // models: { Author: dbStub}
     });
     
     it('should get all authors', (done) => {
