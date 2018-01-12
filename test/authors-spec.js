@@ -7,11 +7,16 @@ const cheerio = require("cheerio");
 const winston = require('winston');
 const proxyquire = require('proxyquire');
 const sinon = require('sinon');
+const sinonChai = require("sinon-chai");
+chai.use(sinonChai);
 const auth = require('../controllers/ensureAuthentication');
+
+//const models = require('../server/models/');
 
 describe("/authors", () => {
   
-  let authStub;
+  let authStub,
+      loggerStub;
   
   before(function(){
     authStub = sinon
@@ -19,10 +24,13 @@ describe("/authors", () => {
                 .returns(function(req, res, next) {
                   next();
                 });
+                
+    //authStub['@global'] = true;            
+                    
     
-    app = proxyquire('../app', {
-      ensureAuthentication: authStub
-    });              
+    // app = proxyquire('../app', {
+    //   ensureAuthentication: authStub
+    // });              
   });
   
   after(function() {
@@ -30,12 +38,51 @@ describe("/authors", () => {
   });
   
   context("Get Authors", () => {
-    it('should get all authors', (done) => {
-      request(app).get('/books/').expect(200).end(done);
+    let dbStub;
+    
+    before(function(){
+      dbStub = {
+        findAll: function() {
+          return Promise.resolve([]);
+        }
+      };
+      
+      app = proxyquire('../app', {
+        ensureAuthentication: authStub,
+        'models.Author': dbStub
+      });  
     });
+    
+    it('should get all authors', (done) => {
+      request(app).get('/authors/').expect(200).end(done);
+    });
+    
   });
 });
 
+// #############################################################################
+//spy
+//let spy = sinon.spy(models.Author, "findAll");
+
+// it('should get all authors', (done) => {
+//   request(app).get('/authors/').expect(200).end(done);
+// });
+
+//spy
+// it('should get all authors', () => {
+//   //request(app).get('/authors/').end(done);
+//   models.Author.findAll({})
+//   expect(spy).to.have.been.calledOnce
+// });
+
+// https://gist.github.com/bulkan/39290b0e4cb9fc76082d
+// sinon.stub(models.Author, 'findAll').yields({})
+// 
+// it('should get all authors', (done) => {
+//   request(app).get('/authors/').expect(200).end(done);
+// });
+
+// #############################################################################
 
 // http://mherman.org/blog/2016/09/25/node-passport-and-postgres/#.WldMdZP1VN0
 //const passportStub = require('passport-stub');
@@ -104,3 +151,5 @@ describe("/authors", () => {
 //        });
 //     });
 // });
+
+// #############################################################################

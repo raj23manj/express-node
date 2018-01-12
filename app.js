@@ -23,8 +23,6 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').strategy;
 var pry = require('pryjs');
 
-
-
 //Set globally
 app.locals.moment = moment;
 //app.locals._ = _;
@@ -101,8 +99,6 @@ if (env !== 'test') {
     ]
   }));
 }
-
-
 
 module.exports = app;
 
