@@ -65,7 +65,7 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
-
+//https://stackoverflow.com/questions/38648577/how-to-unit-test-passport-local-strategy-sinon-proxyquire
 passport.use(new LocalStrategy({usernameField: 'email', passwordField: 'password'},function(username, password, done){
   models.User.findAll({where: {email: username}}).then((user, err) => {
     user = user[0];
