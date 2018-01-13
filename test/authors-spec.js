@@ -76,6 +76,10 @@ describe("/authors", () => {
       // models: { Author: dbStub}
     });
     
+    after(function() {
+      dbStub.restore();
+    });
+    
     it('should get all authors', (done) => {
       // request(app).get('/authors/').expect(200).end(done);
       
@@ -99,36 +103,48 @@ describe("/authors", () => {
   context("Create User", () => {
     let dbStub;
         
-        before(function(){
-          
-          // buildStub = sinon
-          //             .stub(models.Author, 'build')
-          //             .returns({name: 'king'});
-          // 
-          // dbStub = sinon
-          //             .stub(models.Author, 'save')
-          //             .returns(Promise.resolve());
-          // 
-          // app = proxyquire('../app', {
-          //   ensureAuthentication: authStub//,
-          //   models: { Author: dbStub } //{ Author: buildStub, dbStub }
-          // });              
-        });
+    before(function(){
+      
+      // buildStub = sinon
+      //             .stub(models.Author, 'build')
+      //             .returns({name: 'king'});
+      
+      // dbStub = sinon
+      //             .stub(models.Author, 'save')
+      //             .returns(Promise.resolve());
+      
+      // app = proxyquire('../app', {
+      //   ensureAuthentication: authStub//,
+      //   models: { Author: dbStub } //{ Author: buildStub, dbStub }
+      // });              
+    });
         
-        // one solution
-        after(function(){
-          models.Author.destroy({where: {}});
-        });
-          
-        it("build new user and render", (done) => {
-          request(app).post('/authors/create')
-          .send({name: 'king'})
-          .expect(302)
-          .expect('Location', '/authors/')
-          .end(done)
-        });
+    // one solution
+    after(function(){
+      models.Author.destroy({where: {}});
+    });
+      
+    it("build new user and render", (done) => {
+      request(app).post('/authors/create')
+      .send({name: 'king'})
+      .expect(302)
+      .expect('Location', '/authors/')
+      .end(done)
+    });
+        
+    // it("build new user and render", (done) => {
+    //   //https://stackoverflow.com/questions/33270667/mocking-stubbing-mongoose-model-save-method
+    //   sinon.mock(models.Author)
+    //       .expects('save')
+    //       .resolves();
+    //   
+    //   request(app).post('/authors/create')
+    //   .send({name: 'king'})
+    //   .expect(302)
+    //   .expect('Location', '/authors/')
+    //   .end(done)
+    // });
   });
-    
     
   context("delete User", () => {
     let dbStub;
@@ -143,6 +159,10 @@ describe("/authors", () => {
             models: { Author: dbStub } 
           });              
         });
+        
+        after(function() {
+          dbStub.restore();
+        });
       
         it("destroy user", (done) => {
           request(app).get('/authors/23/destroy')
@@ -151,7 +171,49 @@ describe("/authors", () => {
           .end(done)
         });
   });  
+  
+  context("Edit Author", () => {
+    let dbStub;    
+    before(function() {
+      dbStub = sinon.stub(models.Author, 'findOne')
+                    .returns(Promise.resolve([
+                      { id: 1,
+                        name: 'Rajesh',
+                        createdAt: '2017-10-09T18:30:00.000Z',
+                        updatedAt: '2017-10-09T18:30:00.000Z'
+                      }
+                    ]));
+      
+     app = proxyquire('../app', {
+       ensureAuthentication: authStub,
+       models: { Author: dbStub } 
+     });                     
+                         
+    });
+    
+    after(function() {
+      dbStub.restore();
+    });
+    
+    it("should direct to Edit Page", (done) => {
+      request(app).get('/authors/1/edit').expect(200).end(done);
+    });
+  });
 
+  context("Update Author", () => {
+    before(function() {
+      models.Author.create({name: 'King2'}).then(() => {});
+    });
+    
+    after(function(){
+      models.Author.destroy({where: {}});
+    });
+    
+    it("update author", (done) => {
+      request(app).post('/authors/1').expect(302).end(done);
+    });
+    
+  });
 
 }); // main describe
 
