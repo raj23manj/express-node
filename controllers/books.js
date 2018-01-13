@@ -57,6 +57,7 @@ router.get('/', ensureAuthentication.authenticateUser(), function(req, res, next
 
       Promise.all([booksPromise, categoriesPromise])
       .then((results) => {
+        console.log(results);
         res.render('books/index', {title: 'Books Index', data: results[0], categories: results[1] } )
       });
 });
