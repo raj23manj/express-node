@@ -22,6 +22,9 @@ var PrettyError = require('pretty-error');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').strategy;
 var pry = require('pryjs');
+var responseTime = require('response-time')
+var axios = require('axios');
+var redis = require('redis');
 
 
 
@@ -100,6 +103,22 @@ app.use(expressWinston.errorLogger({
     })
   ]
 }));
+
+// redis 
+// set up the response-time middleware
+app.use(responseTime());
+// create a new redis client and connect to our local redis instance
+var client = redis.createClient();
+global.redisClient = client;
+
+// if an error occurs, print it to the console
+client.on('error', function (err) {
+    console.log("Error " + err);
+});
+
+client.on('ready', function() {
+  console.log("Redis Running ....");
+});
 
 
 module.exports = app;

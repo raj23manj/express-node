@@ -116,7 +116,7 @@ router.get('/:id/destroy', ensureAuthentication.authenticateUser(), function (re
 });
 
 router.get('/search/:category_id', function (req, res) {
-  async.parallel({
+    async.parallel({
     books: function(callback) {
       models.Book.findAll({
         where: {
@@ -141,30 +141,18 @@ router.get('/search/:category_id', function (req, res) {
 });
 
 router.get('/search', function (req, res) {
-  async.parallel({
-    books: function(callback) {
-      models.Book.findAll({
-        where: {
-            name: {
-              $like: '%'+req.query.search+'%'
-            }
-        },
-        include: [models.Author, models.Category],
-        order: [
-          ['id', 'DESC']
-        ]}).then(function(data){
-        callback(null, data)
-      });
-    },
-    categories: function(callback) {
-      models.Category.findAll({ order: [['name', 'ASC']] }).then(function(data){
-        callback(null, data)
-      });
-    },
-  }, function(err, results) {
-    if (err) { return next(err); }
-    res.render('books/search.jade', {data: results.books, categories: results.categories })
-  });
+  //redisClient;    
+  let bookPromise =   models.Book.findAll({ where: { name: { $like: '%'+req.query.search+'%'}},
+                                            include: [models.Author, models.Category],
+                                            order: [
+                                              ['id', 'DESC']
+                                            ]}),
+      categoriesPromise = models.Category.findAll({ order: [['name', 'ASC']] });
+      
+    Promise.all([bookPromise, categoriesPromise]).then((results) => {
+      res.render('books/search.jade', {data: results[0], categories: results[1] })
+    }); 
+    
 });
 
 router.get('/show/:id', ensureAuthentication.authenticateUser(), function(req, res) {
