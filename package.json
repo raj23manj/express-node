@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.1",
     "body-parser": "~1.16.0",
     "bootstrap": "4.0.0-beta.2",
     "connect-pg-simple": "^4.2.1",

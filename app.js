@@ -25,7 +25,7 @@ var pry = require('pryjs');
 var responseTime = require('response-time')
 var axios = require('axios');
 var redis = require('redis');
-
+var bluebird = require("bluebird");
 
 
 //Set globally
@@ -35,6 +35,7 @@ app.locals.moment = moment;
 global.appRoot = path.resolve(__dirname);
 global._ = _;
 global.pry = pry;
+global.bluebird = bluebird;
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade');
@@ -118,6 +119,14 @@ client.on('error', function (err) {
 
 client.on('ready', function() {
   console.log("Redis Running ....");
+});
+
+bluebird.promisifyAll(redis.RedisClient.prototype);
+bluebird.promisifyAll(redis.Multi.prototype);
+
+// flush the entire DB
+client.flushdb( function (err, succeeded) {
+    console.log(succeeded); // will be true if successfull
 });
 
 

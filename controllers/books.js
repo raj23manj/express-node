@@ -26,7 +26,7 @@ const upload = multer({storage: storage,
                         cb(null, true)
                        }
                     });
-
+                    
 /* GET home page. */
 router.get('/', ensureAuthentication.authenticateUser(), function(req, res, next) {
   async.parallel({
@@ -145,29 +145,8 @@ router.get('/search', function (req, res) {
   
   //https://stackoverflow.com/questions/38747339/how-to-store-array-of-objects-in-redis
   //https://coligo.io/nodejs-api-redis-cache/
-  
-  // redisClient.getAsync(searchParam).then((res) => {
-  //   if(res){
-  //     redisClient.get("categories", (err, categ) => { 
-  //       res.render('books/search.jade', {data: res, categories:  catego});
-  //     });
-  //   }else{
-  //     let bookPromise =   models.Book.findAll({ where: { name: { $like: '%'+searchParam+'%'}},
-  //                                               include: [models.Author, models.Category],
-  //                                               order: [
-  //                                                 ['id', 'DESC']
-  //                                               ]}),
-  //         categoriesPromise = models.Category.findAll({ order: [['name', 'ASC']] });
-  //         
-  //       Promise.all([bookPromise, categoriesPromise]).then((results) => {
-  //         redisClient.set(searchParam, results[0], 'EX', 60);
-  //         redisClient.set("categories", results[1], 'EX', 120);
-  //         res.render('books/search.jade', {data: results[0], categories: results[1] });
-  //       }); 
-  //   }  
-  // });
-  
-  redisClient.get(searchParam, (err, result) => {
+  // redisClient.end(true)
+  redisClient.getAsync(searchParam).then((result) => {
     if(result){
       res.render('books/search.jade', {data: JSON.parse(result)});
     }else{
@@ -175,14 +154,32 @@ router.get('/search', function (req, res) {
                                                 include: [models.Author, models.Category],
                                                 order: [
                                                   ['id', 'DESC']
-                                               ]}); 
+                                                ]});
           
         Promise.all([bookPromise]).then((results) => {
           redisClient.setex(searchParam, 60, JSON.stringify(results[0]));
-          res.render('books/search.jade', {data: results[0], categories: results[1] });
+          res.render('books/search.jade', {data: results[0] });
         }); 
     }  
   });
+  
+  // working but synchronus
+  // redisClient.get(searchParam, (err, result) => {
+  //   if(result){
+  //     res.render('books/search.jade', {data: JSON.parse(result)});
+  //   }else{
+  //     let bookPromise =   models.Book.findAll({ where: { name: { $like: '%'+searchParam+'%'}},
+  //                                               include: [models.Author, models.Category],
+  //                                               order: [
+  //                                                 ['id', 'DESC']
+  //                                              ]}); 
+  //         
+  //       Promise.all([bookPromise]).then((results) => {
+  //         redisClient.setex(searchParam, 60, JSON.stringify(results[0]));
+  //         res.render('books/search.jade', {data: results[0], categories: results[1] });
+  //       }); 
+  //   }  
+  // });
   
     
 });
