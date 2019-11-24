@@ -38,7 +38,7 @@
     "popper.js": "^1.12.6",
     "pretty-error": "^2.1.1",
     "pryjs": "^1.0.3",
-    "sequelize": "^3.31.1",
+    "sequelize": "^5.15.1",
     "sequelize-cli": "^2.8.0",
     "serve-favicon": "~2.3.2",
     "webpack": "^3.8.1",
